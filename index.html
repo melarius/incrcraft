@@ -1,0 +1,84 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <!--эта строка нужна для того, чтобы браузер не угадывал кодировку-->
+  <title>
+    IncreCraft
+  </title>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: 200px  150px 200px 200px 1fr 1fr;
+      grid-template-rows: 50px 50px 50px 50px 50px;
+      gap: 0px 0px;
+    }
+
+    html,
+    body,
+    .container {
+      height: 100%;
+      margin: 0;
+    }
+
+    button {
+      white-space: pre-line;
+    }
+
+    .gridItemBorder {
+      border-bottom: 2px solid #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" style="display: grid">
+    <div class="gridItemBorder" style="place-self: center;">Материал</div>
+    <div class="gridItemBorder" style="place-self: center;">Уровень|Добыча</div>
+    <div class="gridItemBorder" style="place-self: center;">Улучшение</div>
+    <div class="gridItemBorder" style="place-self: center;">Продажа</div>
+
+    <div style="place-self: center;">Бревна: <span id="spnWoodValue">0</span></div>
+    <div style="place-self: center;"><span id="spnWoodUpgLevel">0</span> | <span id="spnWoodRate">0</span>/c</div>
+    <div style="place-self: center;"><button id="btnUpgWood" style="width: 200px;">Построить лесоповал,<br> 10 монет</button></div>
+    <div style="place-self: center;"><button id="btnSellWood" style="width: 130px;">Продать за 1 м.</button></div>
+
+    <div style="place-self: center;">Доски: <span id="spnPlankValue">0</span></div>
+    <div style="place-self: center;"><span id="spnPlankUpgLevel">0</span> | <span id="spnPlankRate">0</span>/c</div>
+    <div style="place-self: center;"><button id="btnUpgPlank" style="width: 200px;">Построить лесопилку,<br> 100 монет</button></div>
+    <div style="place-self: center;"><button id="btnSellPlank" style="width: 130px;">Продать за 10 м.</button></div>
+
+    <div style="place-self: center;">Камень: <span id="spnStoneValue">0</span></div>
+    <div style="place-self: center;"><span id="spnStoneUpgLevel">0</span> | <span id="spnStoneRate">0</span>/c</div>
+    <div style="place-self: center;"><button id="btnUpgStone" style="width: 200px;">Построить каменоломню,<br> 300 монет</button></div>
+    <div style="place-self: center;"><button id="btnSellStone" style="width: 130px;">Продать за 30 м.</button></div>
+
+    <div style="place-self: center;">Блоки: <span id="spnBlocksValue">0</span></div>
+    <div style="place-self: center;"><span id="spnBlocksUpgLevel">0</span> | <span id="spnBlocksRate">0</span>/c</div>
+    <div style="place-self: center;"><button id="btnUpgBlocks" style="width: 200px;">Построить мастерскую,<br> 500 монет</button></div>
+    <div style="place-self: center;"><button id="btnSellBlocks" style="width: 130px;">Продать за 50 м.</button></div>
+    
+    <div style="place-self: end center; grid-row: 1/ 2; grid-column: 5;">
+      <button id="btnChopTrees" style="width: 200px;">Рубить деревья</button>
+    </div>
+
+    <div style="text-align: center; place-self: center; grid-row: 2 / 5; grid-column: 5;">
+      <label>Монеты</label><br><br><span id="spnMoneyValue">0</span>
+    </div>
+
+    <div style="place-self: end; grid-row: 1 / 5; grid-column: 6;">
+      <button id="btnSaveGame" style="width: 150px;">Сохранить игру</button><br>
+      <button id="btnExportGame" style="width: 150px;">Экспортировать игру</button><br>
+      <div id="divLblExport" style="display: none"></div>
+      <br>
+      <button id="btnLoadGame" style="width: 150px;">Загрузить игру</button><br>
+      <button id="btnImportGame" style="width: 150px;">Импортировать игру</button><br>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./script.js"></script>
+</body>
+
+</html>
