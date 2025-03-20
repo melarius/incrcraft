@@ -55,18 +55,12 @@ function endOfTurnCalc() {
         wood_prod_rate = (game.woodGrowth * game.woodUpgLevel) - (game.plankUpgLevel * production.plank)
         stone_prod_rate = (game.stoneGrowth * game.stoneUpgLevel) - (game.blocksUpgLevel * production.blocks)
 
-        if (game.wood - (game.plankUpgLevel * production.plank) == 0 ||
-            game.wood == Math.abs(wood_prod_rate) ||
-            wood_prod_rate > 0 ||
-            game.wood - Math.abs(wood_prod_rate) > 0) {
+       if (game.wood + wood_prod_rate >= 0) {
             game.wood += (game.woodGrowth * game.woodUpgLevel) - (game.plankUpgLevel * production.plank);
             game.plank = game.plank + game.plankGrowth * game.plankUpgLevel;
         }
 
-        if (game.stone - (game.stoneUpgLevel * production.blocks) == 0 ||
-            game.stone == Math.abs(stone_prod_rate) ||
-            stone_prod_rate > 0 ||
-            game.stone - Math.abs(stone_prod_rate) > 0) {
+        if (game.stone + stone_prod_rate >= 0) {
             game.stone += (game.stoneGrowth * game.stoneUpgLevel) - (game.blocksUpgLevel * production.blocks);
             game.blocks = game.blocks + game.blocksGrowth * game.blocksUpgLevel;
         }
