@@ -90,18 +90,8 @@
 }
 
 
-.menucont {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 0px 0px;
-    grid-template-areas:
-        "header header header header header"
-        ". . . . .";
-}
-
-.header {
-    grid-area: header;
+.resourse_line{
+    place-self: center;
 }
 
 html,
@@ -117,6 +107,7 @@ button {
 
 .gridItemBorder {
     border-bottom: 2px solid #333;
+    place-self: center;
 }
 
 .tab {
