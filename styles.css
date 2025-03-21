@@ -1,0 +1,184 @@
+.main_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.4fr 1.4fr;
+    grid-template-rows: 250px 250px;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "material material material buttons"
+        "production production production .";
+    grid-gap: 1px;
+    background-color: black;
+
+}
+
+.main_container > * {
+    background-color: white;
+  }
+
+.material {
+    display: grid;
+    grid-template-columns: 100px 200px 150px 200px 200px;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "name_mat . . . ."
+        "name_mat . . . ."
+        "name_mat . . . ."
+        "name_mat . . . ."
+        "name_mat . . . .";
+    grid-area: material;
+    height: auto;
+}
+
+.name_mat {
+    grid-area: name_mat;
+    align-self: center;
+}
+
+.production {
+    display: grid;
+    grid-template-columns: 100px 200px 150px 200px 200px;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "name_prod . . . ."
+        "name_prod . . . ."
+        "name_prod . . . ."
+        "name_prod . . . ."
+        "name_prod . . . .";
+    grid-area: production;
+    border-bottom: 1px solid black;
+    height: auto;
+}
+
+.name_prod {
+    grid-area: name_prod;
+    align-self: center;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ". money ."
+        "clicker . ."
+        "clicker . .";
+    grid-area: buttons;
+}
+
+.money {
+    grid-area: money;
+}
+
+.clicker {
+    grid-area: clicker;
+}
+
+
+.money {
+    grid-area: money;
+}
+
+.clicker {
+    grid-area: clicker;
+}
+
+
+.menucont {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "header header header header header"
+        ". . . . .";
+}
+
+.header {
+    grid-area: header;
+}
+
+html,
+body,
+.container {
+    height: 100%;
+    margin: 0;
+}
+
+button {
+    white-space: pre-line;
+}
+
+.gridItemBorder {
+    border-bottom: 2px solid #333;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab select,
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+.tab select {
+    float: right;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s;
+}
+
+/* Fade in tabs */
+@-webkit-keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Меню */
