@@ -1,11 +1,12 @@
 .main_container {
     display: grid;
     grid-template-columns: 1fr 1fr 1.4fr 1.4fr;
-    grid-template-rows: 250px 250px;
+    grid-template-rows: 250px 250px 250px;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
         "material material material buttons"
+        "recycling recycling recycling ."
         "production production production .";
     grid-gap: 1px;
     background-color: black;
@@ -19,10 +20,11 @@
 .material {
     display: grid;
     grid-template-columns: 100px 200px 150px 200px 200px;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
+        "name_mat . . . ."
         "name_mat . . . ."
         "name_mat . . . ."
         "name_mat . . . ."
@@ -35,15 +37,42 @@
 .name_mat {
     grid-area: name_mat;
     align-self: center;
+    border-right: 1px solid black;
 }
+
+.recycling {
+    display: grid;
+    grid-template-columns: 100px 200px 150px 200px 200px;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "name_recyc . . . ."
+        "name_recyc . . . ."
+        "name_recyc . . . ."
+        "name_recyc . . . ."
+        "name_recyc . . . ."
+        "name_recyc . . . .";
+    grid-area: recycling;
+    border-bottom: 1px solid black;
+    height: auto;
+}
+
+.name_recyc {
+    grid-area: name_recyc;
+    align-self: center;
+    border-right: 1px solid black;
+}
+
 
 .production {
     display: grid;
     grid-template-columns: 100px 200px 150px 200px 200px;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
+        "name_prod . . . ."
         "name_prod . . . ."
         "name_prod . . . ."
         "name_prod . . . ."
@@ -57,6 +86,7 @@
 .name_prod {
     grid-area: name_prod;
     align-self: center;
+    border-right: 1px solid black;
 }
 
 .buttons {
@@ -92,6 +122,10 @@
 
 .resourse_line{
     place-self: center;
+}
+
+.base_bnt{
+    width: 75px;
 }
 
 html,
