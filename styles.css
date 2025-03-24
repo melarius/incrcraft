@@ -96,9 +96,9 @@
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-        ". money ."
-        "clicker . ."
-        "clicker . .";
+        "money . ."
+        ". clicker ."
+        ". test .";
     grid-area: buttons;
 }
 
@@ -111,14 +111,9 @@
 }
 
 
-.money {
-    grid-area: money;
+.test {
+    grid-area: test;
 }
-
-.clicker {
-    grid-area: clicker;
-}
-
 
 .resourse_line{
     place-self: center;
