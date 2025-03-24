@@ -19,17 +19,17 @@
 
 .material {
     display: grid;
-    grid-template-columns: 100px 200px 150px 200px 200px;
+    grid-template-columns: 1fr 1fr 1fr 80px 1fr 1fr  80px;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-        "name_mat . . . ."
-        "name_mat . . . ."
-        "name_mat . . . ."
-        "name_mat . . . ."
-        "name_mat . . . ."
-        "name_mat . . . .";
+        "name_mat . . . . . ."
+        "name_mat . . . . . ."
+        "name_mat . . . . . ."
+        "name_mat . . . . . ."
+        "name_mat . . . . . ."
+        "name_mat . . . . . .";
     grid-area: material;
     height: auto;
 }
@@ -42,7 +42,7 @@
 
 .recycling {
     display: grid;
-    grid-template-columns: 100px 200px 150px 200px 200px;
+    grid-template-columns: 1fr 1fr 1fr 80px 1fr 1fr  80px;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
@@ -67,7 +67,7 @@
 
 .production {
     display: grid;
-    grid-template-columns: 100px 200px 150px 200px 200px;
+    grid-template-columns: 1fr 1fr 1fr 80px 1fr 1fr  80px;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
