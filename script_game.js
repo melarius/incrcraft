@@ -254,14 +254,14 @@ const ui = {
 }
 
 function updateUI() {
-    ui.money.textContent = Math.round(game.money);
+    ui.money.textContent = Math.ceil(game.money);
     updateButtons()
 
     ui.wood.value.textContent = game.wood;
     if (game.woodUpgLevel === 0) {
         ui.plank.upgrade.textContent = baseprice.wood;
     } else {
-        ui.wood.upgrade.textContent = Math.round(UpgradeCost("wood"));
+        ui.wood.upgrade.textContent = Math.ceil(UpgradeCost("wood"));
     }
     ui.wood.rate.textContent = (game.woodGrowth * game.woodUpgLevel) - (game.plankUpgLevel * production.plank);
     ui.wood.level.textContent = game.woodUpgLevel;
@@ -270,7 +270,7 @@ function updateUI() {
     if (game.plankUpgLevel === 0) {
         ui.plank.upgrade.textContent = baseprice.plank;
     } else {
-        ui.plank.upgrade.textContent = Math.round(UpgradeCost("plank"));
+        ui.plank.upgrade.textContent = Math.ceil(UpgradeCost("plank"));
     }
     ui.plank.rate.textContent = game.plankGrowth * game.plankUpgLevel;
     ui.plank.level.textContent = game.plankUpgLevel;
@@ -279,7 +279,7 @@ function updateUI() {
     if (game.stoneUpgLevel === 0) {
         ui.stone.upgrade.textContent = baseprice.stone;
     } else {
-        ui.stone.upgrade.textContent = Math.round(UpgradeCost("stone"));
+        ui.stone.upgrade.textContent = Math.ceil(UpgradeCost("stone"));
     }
     ui.stone.rate.textContent = game.stoneGrowth * game.stoneUpgLevel - (game.blocksUpgLevel * production.blocks);
     ui.stone.level.textContent = game.stoneUpgLevel;
@@ -288,7 +288,7 @@ function updateUI() {
     if (game.copperoreUpgLevel === 0) {
         ui.copperore.upgrade.textContent = baseprice.copperore;
     } else {
-        ui.copperore.upgrade.textContent = Math.round(UpgradeCost("copperore"));
+        ui.copperore.upgrade.textContent = Math.ceil(UpgradeCost("copperore"));
     }
     ui.copperore.rate.textContent = game.copperoreGrowth * game.copperoreUpgLevel - (game.blocksUpgLevel * production.blocks);
     ui.copperore.level.textContent = game.copperoreUpgLevel;
@@ -297,7 +297,7 @@ function updateUI() {
     if (game.tinoreUpgLevel === 0) {
         ui.tinore.upgrade.textContent = baseprice.tinore;
     } else {
-        ui.tinore.upgrade.textContent = Math.round(UpgradeCost("tinore"));
+        ui.tinore.upgrade.textContent = Math.ceil(UpgradeCost("tinore"));
     }
     ui.tinore.rate.textContent = game.tinoreGrowth * game.tinoreUpgLevel - (game.blocksUpgLevel * production.blocks);
     ui.tinore.level.textContent = game.tinoreUpgLevel;
@@ -306,7 +306,7 @@ function updateUI() {
     if (game.ironoreUpgLevel === 0) {
         ui.ironore.upgrade.textContent = baseprice.ironore;
     } else {
-        ui.ironore.upgrade.textContent = Math.round(UpgradeCost("ironore"));
+        ui.ironore.upgrade.textContent = Math.ceil(UpgradeCost("ironore"));
     }
     ui.ironore.rate.textContent = game.ironoreGrowth * game.ironoreUpgLevel - (game.blocksUpgLevel * production.blocks);
     ui.ironore.level.textContent = game.ironoreUpgLevel;
@@ -315,7 +315,7 @@ function updateUI() {
     if (game.blocksUpgLevel === 0) {
         ui.blocks.upgrade.textContent = baseprice.blocks;
     } else {
-        ui.blocks.upgrade.textContent = Math.round(UpgradeCost("blocks"));
+        ui.blocks.upgrade.textContent = Math.ceil(UpgradeCost("blocks"));
     }
     ui.blocks.rate.textContent = game.blocksGrowth * game.blocksUpgLevel;
     ui.blocks.level.textContent = game.blocksUpgLevel;
@@ -324,7 +324,7 @@ function updateUI() {
     if (game.copperingotUpgLevel === 0) {
         ui.copperingot.upgrade.textContent = baseprice.copperingot;
     } else {
-        ui.copperingot.upgrade.textContent = Math.round(UpgradeCost("copperingot"));
+        ui.copperingot.upgrade.textContent = Math.ceil(UpgradeCost("copperingot"));
     }
     ui.copperingot.rate.textContent = game.copperingotGrowth * game.copperingotUpgLevel - (game.blocksUpgLevel * production.blocks);
     ui.copperingot.level.textContent = game.copperingotUpgLevel;
@@ -333,7 +333,7 @@ function updateUI() {
     if (game.tiningotUpgLevel === 0) {
         ui.tiningot.upgrade.textContent = baseprice.tiningot;
     } else {
-        ui.tiningot.upgrade.textContent = Math.round(UpgradeCost("tiningot"));
+        ui.tiningot.upgrade.textContent = Math.ceil(UpgradeCost("tiningot"));
     }
     ui.tiningot.rate.textContent = game.tiningotGrowth * game.tiningotUpgLevel - (game.blocksUpgLevel * production.blocks);
     ui.tiningot.level.textContent = game.tiningotUpgLevel;
@@ -342,7 +342,7 @@ function updateUI() {
     if (game.ironingotUpgLevel === 0) {
         ui.ironingot.upgrade.textContent = baseprice.ironingot;
     } else {
-        ui.ironingot.upgrade.textContent = Math.round(UpgradeCost("ironingot"));
+        ui.ironingot.upgrade.textContent = Math.ceil(UpgradeCost("ironingot"));
     }
     ui.ironingot.rate.textContent = game.ironingotGrowth * game.ironingotUpgLevel - (game.blocksUpgLevel * production.blocks);
     ui.ironingot.level.textContent = game.ironingotUpgLevel;
