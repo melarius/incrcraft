@@ -146,7 +146,11 @@
 }
 
 .base_bnt{
-    width: 75px;
+    width: 200px;
+}
+
+button {
+    min-width: 75;
 }
 
 html,
