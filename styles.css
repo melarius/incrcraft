@@ -6,8 +6,8 @@
     grid-auto-flow: row;
     grid-template-areas:
         "material material material buttons"
-        "recycling recycling recycling city"
-        "production production production .";
+        "recycling recycling recycling build"
+        "production production production build";
     grid-gap: 1px;
     background-color: black;
     border-collapse: collapse;
@@ -104,15 +104,16 @@
 
 .buttons {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-        "money . ."
-        ". clicker ."
-        ". test .";
+        "money"
+        "clicker"
+        "test";
     grid-area: buttons;
+    height: auto;
 }
 
 .money {
@@ -128,22 +129,22 @@
     grid-area: test;
 }
 
-.city {
+.build {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-        "city_head"
+        "build_head"
         "."
         ".";
-    grid-area: city;
+    grid-area: build;
     height: auto;
 }
 
-.city_head {
-    grid-area: city_head;
+.build_head {
+    grid-area: build_head;
     align-self: center;
     display: flex;
     justify-content: center;

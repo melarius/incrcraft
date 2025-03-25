@@ -198,9 +198,10 @@
       </div>
       <div class="buttons">
         <div class="money">
-          <div style="text-align: center; place-self: center;">
-            <label><b>Монеты</b></label><br><br><img src="static/coin.png"> <span id="spnMoneyValue">0</span> <img
-              src="static/coin.png">
+          <div class="material_line" style="place-self: center;">
+            <div>
+            <label><b>Монеты</b></label> <span id="spnMoneyValue">0</span> <img src="static/coin.png">
+            </div>
           </div>
         </div>
         <div class="clicker">
@@ -215,8 +216,8 @@
         </div>
       </div>
       
-      <div class="city">
-        <div class="city_head"><div>Строительство</div></div>
+      <div class="build">
+        <div class="build_head"><div>Строительство</div></div>
         <div class="material_line">
           <div class="gridItemBorder">Объект</div>
           <div class="gridItemBorder">Ресурсы</div>
@@ -230,8 +231,42 @@
           <div><button id="btnBuildHouse" class="base_btn"><img src="static/hammer.png"></button></div>
           <div><span id="spnHouseValue">0</span>/50 <img src="static/house.png"></div>
         </div>
+
+        <div class="material_line">
+          <div>Лесопилка</div>
+          <div>Бревна: 50</div>
+          <div><button id="btnBuildSawmill" class="base_btn"><img src="static/hammer.png"></button></div>
+          <div><span id="spnSawmillValue">0</span>/1 <img src="static/house.png"></div>
+        </div>
+
+        <div class="material_line">
+          <div>Карьер</div>
+          <div>Бревна: 100; Доски: 50</div>
+          <div><button id="btnBuildQuarry" class="base_btn"><img src="static/hammer.png"></button></div>
+          <div><span id="spnQuarryValue">0</span>/1 <img src="static/house.png"></div>
+        </div>
+
+        <div class="material_line">
+          <div>Медная шахта</div>
+          <div>Доски: 50</div>
+          <div><button id="btnBuildCopperMine" class="base_btn"><img src="static/hammer.png"></button></div>
+          <div><span id="spnCopperMineValue">0</span>/1 <img src="static/house.png"></div>
+        </div>
+
+        <div class="material_line">
+          <div>Оловянная шахта</div>
+          <div>Медные слитки: 50</div>
+          <div><button id="btnBuildTinMine" class="base_btn"><img src="static/hammer.png"></button></div>
+          <div><span id="spnTinMineValue">0</span>/1 <img src="static/house.png"></div>
+        </div>
+
+        <div class="material_line">
+          <div>Железная шахта</div>
+          <div>Медные слитки: 50; Оловянные слитки: 50</div>
+          <div><button id="btnBuildIronMine" class="base_btn"><img src="static/hammer.png"></button></div>
+          <div><span id="spnIronMineValue">0</span>/1 <img src="static/house.png"></div>
+        </div>
       </div>
-      <div><!-- Пустой div-заглушка --></div>
     </div>
   </div>
   <div id="city" class="tabcontent">
