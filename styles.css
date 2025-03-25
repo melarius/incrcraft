@@ -25,7 +25,7 @@
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-        "name_mat ."
+        "name_mat head_mat"
         "name_mat ."
         "name_mat ."
         "name_mat ."
@@ -34,6 +34,17 @@
     grid-area: material;
     height: auto;
     
+}
+
+.head_mat {
+    grid-area: head_mat;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-left: 10px;
+    margin-right: 10px;
+    justify-content: space-between;
+    align-items: left;
 }
 
 .name_mat {
@@ -139,7 +150,6 @@
     grid-auto-flow: row;
     grid-template-areas:
         "build_head"
-        "."
         ".";
     grid-area: build;
     height: auto;
