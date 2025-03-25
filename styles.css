@@ -132,9 +132,8 @@
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    column-gap: 1em;
-    row-gap: 10px;
     margin-left: 10px;
+    margin-right: 10px;
 }
 
 .material_line > * {
