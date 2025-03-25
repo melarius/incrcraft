@@ -53,6 +53,7 @@
     align-items: center;
     border-right: 1px solid black;
     height: 100%;
+    font-weight: bold;
 }
 
 .recycling {
@@ -91,6 +92,7 @@
     align-self: center;
     border-right: 1px solid black;
     height: 100%;
+    font-weight: bold;
 }
 
 
@@ -120,6 +122,7 @@
     align-items: center;
     border-right: 1px solid black;
     height: 100%;
+    font-weight: bold;
 }
 
 .head_prod {
@@ -181,6 +184,7 @@
     align-items: center;
     border-bottom: 1px solid black;
     height: 100%;
+    font-weight: bold;
 }
 
 .head_build {
