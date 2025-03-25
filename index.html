@@ -29,7 +29,7 @@
       <div class="material">
         <div class="name_mat">Добыча</div>
 
-        <div class="material_line">
+        <div class="material_line ml-p">
           <div class="gridItemBorder">Материал</div>
           <div class="gridItemBorder">Уровень</div>
           <div class="gridItemBorder">Улучшение</div>
@@ -86,7 +86,7 @@
       <div class="recycling">
         <div class="name_recyc">Переработка</div>
 
-        <div class="material_line">
+        <div class="material_line ml-p">
           <div class="gridItemBorder">Материал</div>
           <div class="gridItemBorder">Уровень</div>
           <div class="gridItemBorder">Улучшение</div>
@@ -139,18 +139,6 @@
           <div><span id="spnIronIngotValue">0</span> <img src="static/iron_ingot.png"></div>
           <div><button id="btnSellIronIngot" class="base_btn">100 <img src="static/money-bag.png"></button></div>
         </div>
-      </div>
-      <div class="production">
-        <div class="name_prod">Производство</div>
-
-        <div class="material_line">
-          <div class="gridItemBorder">Материал</div>
-          <div class="gridItemBorder">Уровень</div>
-          <div class="gridItemBorder">Улучшение</div>
-          <div class="gridItemBorder">Добыча</div>
-          <div class="gridItemBorder">Количество</div>
-          <div class="gridItemBorder">Продажа</div>
-        </div>
 
         <div class="material_line">
           <div>Бронзовые слитки</div>
@@ -159,6 +147,18 @@
           <div><span id="spnBronzeIngotRate">0</span>/c</div>
           <div><span id="spnBronzeIngotValue">0</span> <img src="static/bronze_ingot.png"></div>
           <div><button id="btnSellBronzeIngot" class="base_btn">100 <img src="static/money-bag.png"></button></div>
+        </div>
+      </div>
+      <div class="production">
+        <div class="name_prod">Производство</div>
+
+        <div class="material_line  ml-p">
+          <div class="gridItemBorder">Предмет</div>
+          <div class="gridItemBorder">Уровень</div>
+          <div class="gridItemBorder">Улучшение</div>
+          <div class="gridItemBorder">Изготовление</div>
+          <div class="gridItemBorder">Количество</div>
+          <div class="gridItemBorder">Продажа</div>
         </div>
 
         <div class="material_line">
@@ -218,14 +218,14 @@
       
       <div class="build">
         <div class="build_head"><div>Строительство</div></div>
-        <div class="material_line">
+        <!-- <div class="material_line">
           <div class="gridItemBorder">Объект</div>
           <div class="gridItemBorder">Ресурсы</div>
           <div class="gridItemBorder">Строить</div>
           <div class="gridItemBorder">Построено</div>
-        </div>
+        </div> -->
 
-        <div class="material_line">
+        <div class="material_line ml-p">
           <div>Дом</div>
           <div>Бревна: 10</div>
           <div><button id="btnBuildHouse" class="base_btn"><img src="static/hammer.png"></button></div>
@@ -241,7 +241,7 @@
 
         <div class="material_line">
           <div>Карьер</div>
-          <div>Бревна: 100; Доски: 50</div>
+          <div>Бревна: 100;<br>Доски: 50</div>
           <div><button id="btnBuildQuarry" class="base_btn"><img src="static/hammer.png"></button></div>
           <div><span id="spnQuarryValue">0</span>/1 <img src="static/house.png"></div>
         </div>
@@ -262,7 +262,7 @@
 
         <div class="material_line">
           <div>Железная шахта</div>
-          <div>Медные слитки: 50; Оловянные слитки: 50</div>
+          <div>Медные слитки: 50;<br>Оловянные слитки: 50</div>
           <div><button id="btnBuildIronMine" class="base_btn"><img src="static/hammer.png"></button></div>
           <div><span id="spnIronMineValue">0</span>/1 <img src="static/house.png"></div>
         </div>
