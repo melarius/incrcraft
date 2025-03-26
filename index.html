@@ -8,6 +8,17 @@
     IncreCraft
   </title>
   <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+
+  <!-- тесты -->
+  <link rel="stylesheet" type="text/css" href="tooltipster/dist/css/tooltipster.bundle.min.css" />
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.0.min.js"></script>
+  <script type="text/javascript" src="tooltipster/dist/js/tooltipster.bundle.min.js"></script>
+  <script>
+    $(document).ready(function() {
+        $('.tooltip').tooltipster({theme: 'tooltipster-noir'});
+    });
+  </script>
+  
 </head>
 
 <body>
@@ -29,14 +40,12 @@
     <div class="main_container">
       <div class="material">
         <div class="name_mat">Добыча</div>
-        <div class="head_mat material_line">
+        <!-- <div class="head_mat material_line">
             <div class="gridItemBorder">Материал</div>
-            <!-- <div class="gridItemBorder">Уровень</div> -->
             <div class="gridItemBorder">Улучшение</div>
-            <!-- <div class="gridItemBorder">Добыча</div> -->
             <div class="gridItemBorder">Количество</div>
             <div class="gridItemBorder">Продажа</div>
-        </div>
+        </div> -->
 
         
 
@@ -78,82 +87,76 @@
       <div class="recycling">
         <div class="name_recyc">Переработка</div>
 
-        <div class="head_rec material_line">
+        <!-- <div class="head_rec material_line">
           <div class="gridItemBorder">Материал</div>
-          <!-- <div class="gridItemBorder">Уровень</div> -->
           <div class="gridItemBorder">Улучшение</div>
-          <!-- <div class="gridItemBorder">Добыча</div> -->
           <div class="gridItemBorder">Количество</div>
           <div class="gridItemBorder">Продажа</div>
-        </div>
+        </div> -->
 
         <div class="material_line">
           <div>Доски (<span id="spnPlankUpgLevel">0</span>)</div>
           <div><button id="btnUpgPlank" class="base_btn"><span id="spnPlankUpg">100</span> <img src="static/coin.png"></button> </div>
-          <div><span id="spnPlankValue">0</span> <img src="static/plank.png"> (<span id="spnPlankRate">0</span>/c)</div>
+          <div class="tooltip" data-tooltip-content="#tooltip_plank"><span id="spnPlankValue">0</span> <img src="static/plank.png"> (<span id="spnPlankRate">0</span>/c)</div>
           <div><button id="btnSellPlank" class="base_btn">0 <img src="static/money-bag.png"></button></div>
         </div>
 
         <div class="material_line">
           <div>Блоки (<span id="spnBlocksUpgLevel">0</span>)</div>
           <div><button id="btnUpgBlocks" class="base_btn"><span id="spnBlocksUpg">500</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnBlocksValue">0</span> <img src="static/block.png"> (<span id="spnBlocksRate">0</span>/c)</div>
+          <div class="tooltip" data-tooltip-content="#tooltip_blocks"><span id="spnBlocksValue">0</span> <img src="static/block.png"> (<span id="spnBlocksRate">0</span>/c)</div>
           <div><button id="btnSellBlocks" class="base_btn">0 <img src="static/money-bag.png"></button></div>
         </div>
 
         <div class="material_line">
           <div>Медные слитки (<span id="spnCopperIngotUpgLevel">0</span>)</div>
           <div><button id="btnUpgCopperIngot" class="base_btn"><span id="spnCopperIngotUpg">750</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnCopperIngotValue">0</span> <img src="static/copper_ingot.png"> (<span id="spnCopperIngotRate">0</span>/c)</div>
+          <div class="tooltip" data-tooltip-content="#tooltip_copperingot"><span id="spnCopperIngotValue">0</span> <img src="static/copper_ingot.png"> (<span id="spnCopperIngotRate">0</span>/c)</div>
           <div><button id="btnSellCopperIngot" class="base_btn">0 <img src="static/money-bag.png"></button></div>
         </div>
 
         <div class="material_line">
           <div>Оловянные слитки (<span id="spnTinIngotUpgLevel">0</span>)</div>
           <div><button id="btnUpgTinIngot" class="base_btn"><span id="spnTinIngotUpg">800</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnTinIngotValue">0</span> <img src="static/tin_ingot.png"> (<span id="spnTinIngotRate">0</span>/c)</div>
+          <div class="tooltip" data-tooltip-content="#tooltip_tiningot"><span id="spnTinIngotValue">0</span> <img src="static/tin_ingot.png"> (<span id="spnTinIngotRate">0</span>/c)</div>
           <div><button id="btnSellTinIngot" class="base_btn">0 <img src="static/money-bag.png"></button></div>
         </div>
 
         <div class="material_line">
           <div>Железные слитки (<span id="spnIronIngotUpgLevel">0</span>)</div>
           <div><button id="btnUpgIronIngot" class="base_btn"><span id="spnIronIngotUpg">1000</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnIronIngotValue">0</span> <img src="static/iron_ingot.png"> (<span id="spnIronIngotRate">0</span>/c)</div>
+          <div class="tooltip" data-tooltip-content="#tooltip_ironingot"><span id="spnIronIngotValue">0</span> <img src="static/iron_ingot.png"> (<span id="spnIronIngotRate">0</span>/c)</div>
           <div><button id="btnSellIronIngot" class="base_btn">0 <img src="static/money-bag.png"></button></div>
         </div>
 
         <div class="material_line">
           <div>Бронзовые слитки (<span id="spnBronzeIngotUpgLevel">0</span>)</div>
-          <div><button id="btnUpgBronzeIngot" class="base_btn"><span id="spnBronzeIngotUpg">1000</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnBronzeIngotValue">0</span> <img src="static/bronze_ingot.png"> (<span id="spnBronzeIngotRate">0</span>/c)</div>
+          <div><button id="btnUpgBronzeIngot" class="base_btn"><span id="spnBronzeIngotUpg">1500</span> <img src="static/coin.png"></button></div>
+          <div class="tooltip" data-tooltip-content="#tooltip_bronzeingot"><span id="spnBronzeIngotValue">0</span> <img src="static/bronze_ingot.png"> (<span id="spnBronzeIngotRate">0</span>/c)</div>
           <div><button id="btnSellBronzeIngot" class="base_btn">0 <img src="static/money-bag.png"></button></div>
         </div>
       </div>
       <div class="production">
         <div class="name_prod">Производство</div>
 
-        <div class="head_prod material_line">
+        <!-- <div class="head_prod material_line">
           <div class="gridItemBorder">Предмет</div>
-          <div class="gridItemBorder">Уровень</div>
           <div class="gridItemBorder">Улучшение</div>
-          <div class="gridItemBorder">Изготовление</div>
           <div class="gridItemBorder">Количество</div>
           <div class="gridItemBorder">Продажа</div>
-        </div>
+        </div> -->
 
         <div class="material_line">
           <div>Инструменты (<span id="spnToolsUpgLevel">0</span>)</div>
           <div><button id="btnUpgTools" class="base_btn"><span id="spnToolsUpg">1000</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnToolsRate">0</span>/c</div>
-          <div><span id="spnToolsValue">0</span> <img src="static/tools.png"></div>
+          <div><span id="spnToolsValue">0</span> <img src="static/tools.png"> (<span id="spnToolsRate">0</span>/c)</div>
           <div><button id="btnSellTools" class="base_btn">100 <img src="static/money-bag.png"></button></div>
         </div>
         
         <div class="material_line">
           <div>Гвозди (<span id="spnNailsUpgLevel">0</span>)</div>
           <div><button id="btnUpgNails" class="base_btn"><span id="spnNailsUpg">1000</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnNailsRate">0</span>/c</div>
-          <div><span id="spnNailsValue">0</span> <img src="static/nails.png"></div>
+          <div><span id="spnNailsValue">0</span> <img src="static/nails.png"> (<span id="spnNailsRate">0</span>/c)</div>
           <div><button id="btnSellNails" class="base_btn">100 <img src="static/money-bag.png"></button></div>
         </div>
 
@@ -186,6 +189,9 @@
           <div style="place-self: center;">
             <button id="btnChopTrees" style="width: 140px;"><img src="static/axe.png"> Рубить деревья</button>
           </div>
+          <div style="place-self: center;">
+            <button id="btnSellAll" style="width: 140px;">Продать всё <img src="static/money-bag.png"></button>
+          </div>
         </div>
         <div class="test">
           <div style="place-self: center;">
@@ -199,11 +205,11 @@
       
       <div class="build">
         <div class="build_head"><div>Строительство</div></div>
-        <div class="head_build material_line">
+        <!-- <div class="head_build material_line">
           <div class="gridItemBorder">Объект</div>
           <div class="gridItemBorder">Строить</div>
           <div class="gridItemBorder">Построено</div>
-        </div>
+        </div> -->
 
         <div class="material_line ml-p">
           <div>Дом</div>
@@ -245,14 +251,40 @@
   </div>
   <div id="city" class="tabcontent">
     <p>Заготовка под Город</p>
+    <span class="tooltip" data-tooltip-content="#tooltip_bronze">This span has a tooltip with HTML when you hover over
+      it!</span>
   </div>
   <div id="outerworld" class="tabcontent">
     <p>Заготовка под Запределье</p>
   </div>
+  <!-- Всплывающие подсказки -->
+  <div class="tooltip_templates">
+    <span id="tooltip_plank">
+      1 <img src="static/plank.png"> = 4 <img src="static/wood.png">
+    </span>
+    <span id="tooltip_blocks">
+      1 <img src="static/block.png"> = 2 <img src="static/stone.png">
+    </span>
+    <span id="tooltip_copperingot">
+      1 <img src="static/copper_ingot.png"> = 3 <img src="static/copper_ore.png">
+    </span>
+    <span id="tooltip_tiningot">
+      1 <img src="static/tin_ingot.png"> = 2 <img src="static/tin_ore.png">
+    </span>
+    <span id="tooltip_ironingot">
+      1 <img src="static/iron_ingot.png"> = 4 <img src="static/iron_ore.png">
+    </span>
+    <span id="tooltip_bronzeingot">
+      4 <img src="static/bronze_ingot.png"> = 4 <img src="static/copper_ingot.png"> + 1 <img src="static/tin_ingot.png">
+    </span>
+  </div>
+  <!-- ... -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="./script_game.js"></script>
   <script src="./scripts_page.js"></script>
   <script>window.onload = gameLoad()</script>
+
+  
 </body>
 
 </html>

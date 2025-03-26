@@ -308,3 +308,5 @@ body,
 }
 
 /* Меню */
+
+.tooltip_templates { display: none; }

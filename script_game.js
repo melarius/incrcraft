@@ -1,7 +1,7 @@
 
 
 let game = {
-    money: 0,
+    money: 100000,
     wood: 0,
     woodGrowth: 1,
     woodUpgLevel: 0,
@@ -32,6 +32,9 @@ let game = {
     ironingot: 0,
     ironingotGrowth: 1,
     ironingotUpgLevel: 0,
+    bronzeingot: 0,
+    bronzeingotGrowth: 1,
+    bronzeingotUpgLevel: 0,
 }
 
 const updrademulti = {
@@ -44,7 +47,9 @@ const updrademulti = {
     ironingot: 101,
     copperingot: 501,
     tiningot: 751,
-    ironingot: 1001
+    ironingot: 1001,
+    bronzeingot: 1501
+    
 }
 
 const sell = {
@@ -58,6 +63,7 @@ const sell = {
     copperingot: 60,
     tiningot: 75,
     ironingot: 100,
+    bronzeingot: 300
 }
 
 const baseprice = {
@@ -71,6 +77,7 @@ const baseprice = {
     copperingot: 750,
     tiningot: 800,
     ironingot: 1000,
+    bronzeingot: 1500,
 }
 
 const production = {
@@ -79,16 +86,15 @@ const production = {
     copperingot: 3,
     tiningot: 2,
     ironingot: 4,
-    bronzeingot: 10
+    bronzeingot: {
+        copperingot: 4,
+        tiningot: 1
+    }
 }
 
 function TestFunc() {
     // btn = document.getElementById("btnTest_1")
     // btn.innerHTML = `10 <img src="static/tools.png"> 100 <img src="static/coin.png">`
-
-    for (let [key, value] of Object.entries(sell)){
-        console.log(game[key])
-    }
 }
 
 let win_condition = 10000000000000;
@@ -102,9 +108,12 @@ function endOfTurnCalc() {
         wood_prod_rate = (game.woodGrowth * game.woodUpgLevel) - (game.plankUpgLevel * production.plank)
         stone_prod_rate = (game.stoneGrowth * game.stoneUpgLevel) - (game.blocksUpgLevel * production.blocks)
 
-        copperore_prod_rate = (game.copperoreGrowth * game.copperoreUpgLevel) - (game.copperingotUpgLevel * production.copperingot)
-        tinore_prod_rate = (game.tinoreGrowth * game.tinoreUpgLevel) - (game.tiningotUpgLevel * production.tiningot)
+        copperore_prod_rate = (game.copperoreGrowth * game.copperoreUpgLevel) - (game.copperingotUpgLevel * production.copperingot) 
+        tinore_prod_rate = (game.tinoreGrowth * game.tinoreUpgLevel) - (game.tiningotUpgLevel * production.tiningot) 
         ironore_prod_rate = (game.ironoreGrowth * game.ironoreUpgLevel) - (game.ironingotUpgLevel * production.ironingot)
+
+        copperingot_prod_rate = (game.copperingotGrowth * game.copperingotUpgLevel) - (game.bronzeingotUpgLevel * production.bronzeingot.copperingot)
+        tiningot_prod_rate = (game.tiningotGrowth * game.tiningotUpgLevel) - (game.bronzeingotUpgLevel * production.bronzeingot.tiningot)
 
         if (game.wood + wood_prod_rate >= 0) {
             game.wood += wood_prod_rate;
@@ -118,12 +127,23 @@ function endOfTurnCalc() {
 
         if (game.copperore + copperore_prod_rate >= 0) {
             game.copperore += copperore_prod_rate;
-            game.copperingot += game.copperingotGrowth * game.copperingotUpgLevel;
+            if (game.copperingot + copperingot_prod_rate >=0){
+                game.copperingot += copperingot_prod_rate;
+            }
+            
+            
         }
 
         if (game.tinore + tinore_prod_rate >= 0) {
             game.tinore += tinore_prod_rate;
-            game.tiningot += game.tiningotGrowth * game.tiningotUpgLevel;
+            if (game.tiningot + tiningot_prod_rate >= 0){
+                game.tiningot += tiningot_prod_rate;
+            }
+            
+        }
+
+        if (((game.ironingot + tiningot_prod_rate >= 0) && (game.copperingot + copperingot_prod_rate >= 0))&& ((game.copperore + copperore_prod_rate >= 0)&&(game.tinore + tinore_prod_rate >= 0))) {
+            game.bronzeingot += game.bronzeingotGrowth * game.bronzeingotUpgLevel * 4
         }
 
         if (game.ironore + ironore_prod_rate >= 0) {
@@ -200,6 +220,7 @@ function woodUpgCost() {
 const ui = {
     money: document.getElementById("spnMoneyValue"),
     chop: document.getElementById("btnChopTrees"),
+    sellall: document.getElementById("btnSellAll"),
     wood: {
         value: document.getElementById("spnWoodValue"),
         upgrade_btn: document.getElementById("btnUpgWood"),
@@ -281,6 +302,14 @@ const ui = {
         rate: document.getElementById("spnIronIngotRate"),
         sell: document.getElementById("btnSellIronIngot")
     },
+    bronzeingot: {
+        value: document.getElementById("spnBronzeIngotValue"),
+        upgrade_btn: document.getElementById("btnUpgBronzeIngot"),
+        upgrade: document.getElementById("spnBronzeIngotUpg"),
+        level: document.getElementById("spnBronzeIngotUpgLevel"),
+        rate: document.getElementById("spnBronzeIngotRate"),
+        sell: document.getElementById("btnSellBronzeIngot")
+    },
     menuselector: document.getElementById("menuselector"),
 }
 
@@ -357,7 +386,7 @@ function updateUI() {
     } else {
         ui.copperingot.upgrade.textContent = UpgradeCost("copperingot");
     }
-    ui.copperingot.rate.textContent = game.copperingotGrowth * game.copperingotUpgLevel;
+    ui.copperingot.rate.textContent = (game.copperingotGrowth * game.copperingotUpgLevel) - (game.bronzeingotUpgLevel * production.bronzeingot.copperingot);
     ui.copperingot.level.textContent = game.copperingotUpgLevel;
 
     ui.tiningot.value.textContent = game.tiningot;
@@ -366,7 +395,7 @@ function updateUI() {
     } else {
         ui.tiningot.upgrade.textContent = UpgradeCost("tiningot");
     }
-    ui.tiningot.rate.textContent = game.tiningotGrowth * game.tiningotUpgLevel;
+    ui.tiningot.rate.textContent = (game.tiningotGrowth * game.tiningotUpgLevel) - (game.bronzeingotUpgLevel * production.bronzeingot.tiningot);
     ui.tiningot.level.textContent = game.tiningotUpgLevel;
 
     ui.ironingot.value.textContent = game.ironingot;
@@ -377,8 +406,25 @@ function updateUI() {
     }
     ui.ironingot.rate.textContent = game.ironingotGrowth * game.ironingotUpgLevel;
     ui.ironingot.level.textContent = game.ironingotUpgLevel;
+
+    ui.bronzeingot.value.textContent = game.bronzeingot;
+    if (game.bronzeingotUpgLevel === 0) {
+        ui.bronzeingot.upgrade.textContent = baseprice.bronzeingot;
+    } else {
+        ui.bronzeingot.upgrade.textContent = UpgradeCost("bronzeingot");
+    }
+    ui.bronzeingot.rate.textContent = game.bronzeingotGrowth * game.bronzeingotUpgLevel * 4;
+    ui.bronzeingot.level.textContent = game.bronzeingotUpgLevel;
     
 }
+
+ui.sellall.addEventListener("click", function () {
+    for (let [key, value] of Object.entries(sell)){
+        game.money += game[key] * value
+        game[key] = 0
+    }
+    updateUI()
+})
 
 ui.chop.addEventListener("click", function () {
     game.wood += 1
@@ -442,6 +488,11 @@ ui.blocks.upgrade_btn.addEventListener("click", function () {
         updateUI();
     }
 
+})
+
+ui.blocks.sell.addEventListener("click", function () {
+    sellItems("blocks")
+    updateUI()
 })
 
 ui.copperore.upgrade_btn.addEventListener("click", function () {
@@ -540,10 +591,23 @@ ui.ironingot.sell.addEventListener("click", function () {
     updateUI()
 })
 
-ui.blocks.sell.addEventListener("click", function () {
-    sellItems("blocks")
+ui.bronzeingot.upgrade_btn.addEventListener("click", function () {
+    if (game.bronzeingotUpgLevel == 0) {
+        BuildItem("bronzeingot");
+        updateUI();
+    } else {
+        UpgradeItem("bronzeingot");
+        updateUI();
+    }
+
+})
+
+ui.bronzeingot.sell.addEventListener("click", function () {
+    sellItems("bronzeingot")
     updateUI()
 })
+
+
 
 ui.menuselector.addEventListener("change", function (evt) {
     if (evt.target.value === "Save") {

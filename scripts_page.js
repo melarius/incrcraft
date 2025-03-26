@@ -18,3 +18,20 @@ function gameLoad(){
     tab.style.display = "block";
     btn.className += " active";
 }
+
+function showTooltip(element, text) {
+  var tooltip = document.createElement('div');
+  tooltip.innerHTML = text;
+  tooltip.classList.add('js-tooltiptext');
+  document.body.appendChild(tooltip);
+  element.onmousemove = function(e) {
+      tooltip.style.top = (e.pageY + 10) + 'px';
+      tooltip.style.left = (e.pageX + 10) + 'px';
+  };
+}
+function hideTooltip() {
+  var tooltips = document.querySelectorAll('.js-tooltiptext');
+  tooltips.forEach(function(tooltip) {
+      tooltip.remove();
+  });
+}
