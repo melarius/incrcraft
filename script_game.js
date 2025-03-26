@@ -83,7 +83,12 @@ const production = {
 }
 
 function TestFunc() {
-    console.log(UpgradeCost("ironingot"))
+    // btn = document.getElementById("btnTest_1")
+    // btn.innerHTML = `10 <img src="static/tools.png"> 100 <img src="static/coin.png">`
+
+    for (let [key, value] of Object.entries(sell)){
+        console.log(game[key])
+    }
 }
 
 let win_condition = 10000000000000;
@@ -148,12 +153,16 @@ function updateButtons() {
             }
         };
         if (elem.id.includes("Sell")){
-            if (game[elem.id.substring(7).toLowerCase()] === 0){
+            sellvalue = game[elem.id.substring(7).toLowerCase()]*sell[elem.id.substring(7).toLowerCase()]
+            if (sellvalue == 0){
+                elem.innerHTML = `${sellvalue} <img src="static/money-bag.png">`
                 elem.disabled = true;
             }
             else {
                 elem.disabled = false;
+                elem.innerHTML = `${sellvalue} <img src="static/money-bag.png">`
             }
+            
         }
     }
 }

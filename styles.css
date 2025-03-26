@@ -222,12 +222,16 @@
     place-self: center;
 }
 
-.base_bnt{
-    width: 200px;
+button {
+    min-width: 50;
 }
 
-button {
-    min-width: 75;
+.base_btn {
+    width: 100px;
+}
+
+.build_btn {
+    width: 120px;
 }
 
 html,
@@ -235,10 +239,6 @@ body,
 .container {
     height: 100%;
     margin: 0;
-}
-
-button {
-    white-space: pre-line;
 }
 
 .gridItemBorder {

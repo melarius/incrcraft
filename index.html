@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -30,9 +31,9 @@
         <div class="name_mat">Добыча</div>
         <div class="head_mat material_line">
             <div class="gridItemBorder">Материал</div>
-            <div class="gridItemBorder">Уровень</div>
+            <!-- <div class="gridItemBorder">Уровень</div> -->
             <div class="gridItemBorder">Улучшение</div>
-            <div class="gridItemBorder">Добыча</div>
+            <!-- <div class="gridItemBorder">Добыча</div> -->
             <div class="gridItemBorder">Количество</div>
             <div class="gridItemBorder">Продажа</div>
         </div>
@@ -40,48 +41,38 @@
         
 
         <div class="material_line">
-          <div>Бревна</div>
-          <div><span id="spnWoodUpgLevel">0</span></div>
+          <div>Бревна (<span id="spnWoodUpgLevel">0</span>)</div>
           <div><button id="btnUpgWood" class="base_btn"><span id="spnWoodUpg">10</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnWoodRate">0</span>/c</div>
-          <div><span id="spnWoodValue">0</span> <img src="static/wood.png"></div>
-          <div><button id="btnSellWood" class="base_btn">1 <img src="static/money-bag.png"></button></div>
+          <div><span id="spnWoodValue">0</span> <img src="static/wood.png"> (<span id="spnWoodRate">0</span>/c)</div>
+          <div><button id="btnSellWood" class="base_btn">0 <img src="static/money-bag.png"></button></div>
         </div>
 
         <div class="material_line">
-          <div>Камень</div>
-          <div><span id="spnStoneUpgLevel">0</span></div>
+          <div>Камень (<span id="spnStoneUpgLevel">0</span>)</div>
           <div><button id="btnUpgStone" class="base_btn"><span id="spnStoneUpg">300</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnStoneRate">0</span>/c</div>
-          <div><span id="spnStoneValue">0</span> <img src="static/stone.png"></div>
-          <div><button id="btnSellStone" class="base_btn">30 <img src="static/money-bag.png"></button></div>
+          <div><span id="spnStoneValue">0</span> <img src="static/stone.png"> (<span id="spnStoneRate">0</span>/c)</div>
+          <div><button id="btnSellStone" class="base_btn">0 <img src="static/money-bag.png"></button></div>
         </div>
 
         <div class="material_line">
-          <div>Медная руда</div>
-          <div><span id="spnCopperOreUpgLevel">0</span></div>
+          <div>Медная руда (<span id="spnCopperOreUpgLevel">0</span>)</div>
           <div><button id="btnUpgCopperOre" class="base_btn"><span id="spnCopperOreUpg">500</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnCopperOreRate">0</span>/c</div>
-          <div><span id="spnCopperOreValue">0</span> <img src="static/copper_ore.png"></div>
-          <div><button id="btnSellCopperOre" class="base_btn">50 <img src="static/money-bag.png"></button></div>
+          <div><span id="spnCopperOreValue">0</span> <img src="static/copper_ore.png"> (<span id="spnCopperOreRate">0</span>/c)</div>
+          <div><button id="btnSellCopperOre" class="base_btn">0 <img src="static/money-bag.png"></button></div>
         </div>
 
         <div class="material_line">
-          <div>Оловянная руда</div>
-          <div><span id="spnTinOreUpgLevel">0</span></div>
+          <div>Оловянная руда (<span id="spnTinOreUpgLevel">0</span>)</div>
           <div><button id="btnUpgTinOre" class="base_btn"><span id="spnTinOreUpg">750</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnTinOreRate">0</span>/c</div>
-          <div><span id="spnTinOreValue">0</span> <img src="static/tin_ore.png"></div>
-          <div><button id="btnSellTinOre" class="base_btn">75 <img src="static/money-bag.png"></button></div>
+          <div><span id="spnTinOreValue">0</span> <img src="static/tin_ore.png"> (<span id="spnTinOreRate">0</span>/c)</div>
+          <div><button id="btnSellTinOre" class="base_btn">0 <img src="static/money-bag.png"></button></div>
         </div>
 
         <div class="material_line">
-          <div>Железная руда</div>
-          <div><span id="spnIronOreUpgLevel">0</span></div>
+          <div>Железная руда (<span id="spnIronOreUpgLevel">0</span>)</div>
           <div><button id="btnUpgIronOre" class="base_btn"><span id="spnIronOreUpg">1000</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnIronOreRate">0</span>/c</div>
-          <div><span id="spnIronOreValue">0</span> <img src="static/iron_ore.png"></div>
-          <div><button id="btnSellIronOre" class="base_btn">100 <img src="static/money-bag.png"></button></div>
+          <div><span id="spnIronOreValue">0</span> <img src="static/iron_ore.png"> (<span id="spnIronOreRate">0</span>/c)</div>
+          <div><button id="btnSellIronOre" class="base_btn">0 <img src="static/money-bag.png"></button></div>
         </div>
       </div>
       <div class="recycling">
@@ -89,65 +80,53 @@
 
         <div class="head_rec material_line">
           <div class="gridItemBorder">Материал</div>
-          <div class="gridItemBorder">Уровень</div>
+          <!-- <div class="gridItemBorder">Уровень</div> -->
           <div class="gridItemBorder">Улучшение</div>
-          <div class="gridItemBorder">Добыча</div>
+          <!-- <div class="gridItemBorder">Добыча</div> -->
           <div class="gridItemBorder">Количество</div>
           <div class="gridItemBorder">Продажа</div>
         </div>
 
         <div class="material_line">
-          <div>Доски</div>
-          <div><span id="spnPlankUpgLevel">0</span></div>
+          <div>Доски (<span id="spnPlankUpgLevel">0</span>)</div>
           <div><button id="btnUpgPlank" class="base_btn"><span id="spnPlankUpg">100</span> <img src="static/coin.png"></button> </div>
-          <div><span id="spnPlankRate">0</span>/c</div>
-          <div><span id="spnPlankValue">0</span> <img src="static/plank.png"></div>
-          <div><button id="btnSellPlank" class="base_btn">10 <img src="static/money-bag.png"></button></div>
+          <div><span id="spnPlankValue">0</span> <img src="static/plank.png"> (<span id="spnPlankRate">0</span>/c)</div>
+          <div><button id="btnSellPlank" class="base_btn">0 <img src="static/money-bag.png"></button></div>
         </div>
 
         <div class="material_line">
-          <div>Блоки</div>
-          <div><span id="spnBlocksUpgLevel">0</span></div>
+          <div>Блоки (<span id="spnBlocksUpgLevel">0</span>)</div>
           <div><button id="btnUpgBlocks" class="base_btn"><span id="spnBlocksUpg">500</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnBlocksRate">0</span>/c</div>
-          <div><span id="spnBlocksValue">0</span>  <img src="static/block.png"></div>
-          <div><button id="btnSellBlocks" class="base_btn">50 <img src="static/money-bag.png"></button></div>
+          <div><span id="spnBlocksValue">0</span> <img src="static/block.png"> (<span id="spnBlocksRate">0</span>/c)</div>
+          <div><button id="btnSellBlocks" class="base_btn">0 <img src="static/money-bag.png"></button></div>
         </div>
 
         <div class="material_line">
-          <div>Медные слитки</div>
-          <div><span id="spnCopperIngotUpgLevel">0</span></div>
+          <div>Медные слитки (<span id="spnCopperIngotUpgLevel">0</span>)</div>
           <div><button id="btnUpgCopperIngot" class="base_btn"><span id="spnCopperIngotUpg">750</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnCopperIngotRate">0</span>/c</div>
-          <div><span id="spnCopperIngotValue">0</span>  <img src="static/copper_ingot.png"></div>
-          <div><button id="btnSellCopperIngot" class="base_btn">50 <img src="static/money-bag.png"></button></div>
+          <div><span id="spnCopperIngotValue">0</span> <img src="static/copper_ingot.png"> (<span id="spnCopperIngotRate">0</span>/c)</div>
+          <div><button id="btnSellCopperIngot" class="base_btn">0 <img src="static/money-bag.png"></button></div>
         </div>
 
         <div class="material_line">
-          <div>Оловянные слитки</div>
-          <div><span id="spnTinIngotUpgLevel">0</span></div>
+          <div>Оловянные слитки (<span id="spnTinIngotUpgLevel">0</span>)</div>
           <div><button id="btnUpgTinIngot" class="base_btn"><span id="spnTinIngotUpg">800</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnTinIngotRate">0</span>/c</div>
-          <div><span id="spnTinIngotValue">0</span> <img src="static/tin_ingot.png"></div>
-          <div><button id="btnSellTinIngot" class="base_btn">75 <img src="static/money-bag.png"></button></div>
+          <div><span id="spnTinIngotValue">0</span> <img src="static/tin_ingot.png"> (<span id="spnTinIngotRate">0</span>/c)</div>
+          <div><button id="btnSellTinIngot" class="base_btn">0 <img src="static/money-bag.png"></button></div>
         </div>
 
         <div class="material_line">
-          <div>Железные слитки</div>
-          <div><span id="spnIronIngotUpgLevel">0</span></div>
+          <div>Железные слитки (<span id="spnIronIngotUpgLevel">0</span>)</div>
           <div><button id="btnUpgIronIngot" class="base_btn"><span id="spnIronIngotUpg">1000</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnIronIngotRate">0</span>/c</div>
-          <div><span id="spnIronIngotValue">0</span> <img src="static/iron_ingot.png"></div>
-          <div><button id="btnSellIronIngot" class="base_btn">100 <img src="static/money-bag.png"></button></div>
+          <div><span id="spnIronIngotValue">0</span> <img src="static/iron_ingot.png"> (<span id="spnIronIngotRate">0</span>/c)</div>
+          <div><button id="btnSellIronIngot" class="base_btn">0 <img src="static/money-bag.png"></button></div>
         </div>
 
         <div class="material_line">
-          <div>Бронзовые слитки</div>
-          <div><span id="spnBronzeIngotUpgLevel">0</span></div>
+          <div>Бронзовые слитки (<span id="spnBronzeIngotUpgLevel">0</span>)</div>
           <div><button id="btnUpgBronzeIngot" class="base_btn"><span id="spnBronzeIngotUpg">1000</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnBronzeIngotRate">0</span>/c</div>
-          <div><span id="spnBronzeIngotValue">0</span> <img src="static/bronze_ingot.png"></div>
-          <div><button id="btnSellBronzeIngot" class="base_btn">100 <img src="static/money-bag.png"></button></div>
+          <div><span id="spnBronzeIngotValue">0</span> <img src="static/bronze_ingot.png"> (<span id="spnBronzeIngotRate">0</span>/c)</div>
+          <div><button id="btnSellBronzeIngot" class="base_btn">0 <img src="static/money-bag.png"></button></div>
         </div>
       </div>
       <div class="production">
@@ -163,8 +142,7 @@
         </div>
 
         <div class="material_line">
-          <div>Инструменты</div>
-          <div><span id="spnToolsUpgLevel">0</span></div>
+          <div>Инструменты (<span id="spnToolsUpgLevel">0</span>)</div>
           <div><button id="btnUpgTools" class="base_btn"><span id="spnToolsUpg">1000</span> <img src="static/coin.png"></button></div>
           <div><span id="spnToolsRate">0</span>/c</div>
           <div><span id="spnToolsValue">0</span> <img src="static/tools.png"></div>
@@ -172,8 +150,7 @@
         </div>
         
         <div class="material_line">
-          <div>Гвозди</div>
-          <div><span id="spnNailsUpgLevel">0</span></div>
+          <div>Гвозди (<span id="spnNailsUpgLevel">0</span>)</div>
           <div><button id="btnUpgNails" class="base_btn"><span id="spnNailsUpg">1000</span> <img src="static/coin.png"></button></div>
           <div><span id="spnNailsRate">0</span>/c</div>
           <div><span id="spnNailsValue">0</span> <img src="static/nails.png"></div>
@@ -201,7 +178,7 @@
         <div class="money">
           <div class="material_line" style="place-self: center;">
             <div>
-            <label><b>Монеты</b></label> <span id="spnMoneyValue">0</span> <img src="static/coin.png">
+            <b>Монеты</b> <span id="spnMoneyValue">0</span> <img src="static/coin.png">
             </div>
           </div>
         </div>
@@ -214,6 +191,9 @@
           <div style="place-self: center;">
             <button id="btnTest" style="width: 120px;" onclick="TestFunc()">Тестирование</button>
           </div>
+          <div style="place-self: center;">
+            <button id="btnTest_1" style="width: 120px;">test1<img src="static/coin.png"></button>
+          </div>
         </div>
       </div>
       
@@ -221,50 +201,43 @@
         <div class="build_head"><div>Строительство</div></div>
         <div class="head_build material_line">
           <div class="gridItemBorder">Объект</div>
-          <div class="gridItemBorder">Ресурсы</div>
           <div class="gridItemBorder">Строить</div>
           <div class="gridItemBorder">Построено</div>
         </div>
 
         <div class="material_line ml-p">
           <div>Дом</div>
-          <div>Бревна: 10</div>
-          <div><button id="btnBuildHouse" class="base_btn"><img src="static/hammer.png"></button></div>
+          <div><button id="btnBuildHouse" class="build_btn">10 <img src="static/wood.png"><img src="static/hammer.png"></button></div>
           <div><span id="spnHouseValue">0</span>/50 <img src="static/house.png"></div>
         </div>
 
         <div class="material_line">
           <div>Лесопилка</div>
-          <div>Бревна: 50</div>
-          <div><button id="btnBuildSawmill" class="base_btn"><img src="static/hammer.png"></button></div>
+          <div><button id="btnBuildSawmill" class="build_btn">50 <img src="static/wood.png"><img src="static/hammer.png"></button></div>
           <div><span id="spnSawmillValue">0</span>/1 <img src="static/house.png"></div>
         </div>
 
         <div class="material_line">
           <div>Карьер</div>
-          <div>Бревна: 100;<br>Доски: 50</div>
-          <div><button id="btnBuildQuarry" class="base_btn"><img src="static/hammer.png"></button></div>
+          <div><button id="btnBuildQuarry" class="build_btn">100 <img src="static/wood.png"> 50 <img src="static/plank.png"><img src="static/hammer.png"></button></div>
           <div><span id="spnQuarryValue">0</span>/1 <img src="static/house.png"></div>
         </div>
 
         <div class="material_line">
           <div>Медная шахта</div>
-          <div>Доски: 50</div>
-          <div><button id="btnBuildCopperMine" class="base_btn"><img src="static/hammer.png"></button></div>
+          <div><button id="btnBuildCopperMine" class="build_btn">50 <img src="static/plank.png"><img src="static/hammer.png"></button></div>
           <div><span id="spnCopperMineValue">0</span>/1 <img src="static/house.png"></div>
         </div>
 
         <div class="material_line">
           <div>Оловянная шахта</div>
-          <div>Медные слитки: 50</div>
-          <div><button id="btnBuildTinMine" class="base_btn"><img src="static/hammer.png"></button></div>
+          <div><button id="btnBuildTinMine" class="build_btn">50 <img src="static/copper_ingot.png"><img src="static/hammer.png"></button></div>
           <div><span id="spnTinMineValue">0</span>/1 <img src="static/house.png"></div>
         </div>
 
         <div class="material_line">
           <div>Железная шахта</div>
-          <div>Медные слитки: 50;<br>Оловянные слитки: 50</div>
-          <div><button id="btnBuildIronMine" class="base_btn"><img src="static/hammer.png"></button></div>
+          <div><button id="btnBuildIronMine" class="build_btn">50 <img src="static/copper_ingot.png"> 50 <img src="static/tin_ingot.png"><img src="static/hammer.png"></button></div>
           <div><span id="spnIronMineValue">0</span>/1 <img src="static/house.png"></div>
         </div>
       </div>
