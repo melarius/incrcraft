@@ -229,6 +229,46 @@ ui.sawmill.upgrade_btn.addEventListener("click", function (){
     updateUI()
 })
 
+ui.quarry.upgrade_btn.addEventListener("click", function (){
+    Construct({"wood":100, "plank":50}, "quarry")
+    updateUI()
+})
+
+ui.stonemason.upgrade_btn.addEventListener("click", function (){
+    Construct({"wood":100, "stone":50}, "stonemason")
+    updateUI()
+})
+
+ui.coppermine.upgrade_btn.addEventListener("click", function (){
+    Construct({"plank":50}, "coppermine")
+    updateUI()
+})
+
+ui.smelter.upgrade_btn.addEventListener("click", function (){
+    if (game.smelter == 0){
+        Construct({"stone":100, "blocks":50, "plank":100}, "smelter")
+    } else {
+        Construct({"ironingot":50, "blocks":100, "plank":200}, "smelter")
+    }
+    
+    updateUI()
+})
+
+ui.tinmine.upgrade_btn.addEventListener("click", function (){
+    Construct({"copperingot":50}, "tinmine")
+    updateUI()
+})
+
+ui.ironmine.upgrade_btn.addEventListener("click", function (){
+    Construct({"copperingot":50,"tiningot":50}, "ironmine")
+    updateUI()
+})
+
+ui.blacksmith.upgrade_btn.addEventListener("click", function (){
+    Construct({"plank":50,"bronzeingot":50, "ironingot":50}, "blacksmith")
+    updateUI()
+})
+
 ui.menuselector.addEventListener("change", function (evt) {
     if (evt.target.value === "Save") {
         localStorage.setItem('gameTutorial', JSON.stringify(game));

@@ -1,7 +1,7 @@
 
 
 let game = {
-    money: 100000,
+    money: 1000000,
     wood: 0,
     woodGrowth: 1,
     woodUpgLevel: 0,
@@ -42,7 +42,14 @@ let game = {
     nailsGrowth: 1,
     nailsUpgLevel: 0,
     house: 0,
-    sawmill: 0
+    sawmill: 0,
+    quarry: 0,
+    stonemason: 0,
+    coppermine: 0,
+    tinmine: 0,
+    ironmine: 0,
+    smelter:0,
+    blacksmith: 0,
 
 }
 
@@ -119,8 +126,7 @@ const production = {
 function TestFunc() {
     // btn = document.getElementById("btnTest_1")
     // btn.innerHTML = `10 <img src="static/tools.png"> 100 <img src="static/coin.png">`
-    console.log(Construct({"wood":50}, "sawmill"))
-    console.log("sawmill: ", game.sawmill)
+    ui.house.upgrade_btn.disabled = false
 }
 
 function ShowAll(){
@@ -234,12 +240,80 @@ function updateButtons() {
 }
 
 function Milestones() {
-    if (game.house >= 2){
+    if (game.house >= 10){
         ui.sawmill.div.style.display = "flex";
     }
+    if (game.house >= 15 && game.sawmill == 1){
+        ui.quarry.div.style.display = "flex"
+    }
+    if (game.house >= 18 &&  game.quarry == 1){
+        ui.stonemason.div.style.display = "flex"
+    }
+    if (game.house >= 20 &&  game.stonemason == 1){
+        ui.coppermine.div.style.display = "flex"
+        ui.smelter.div.style.display = "flex"
+    }
+    if (game.house >= 23 &&  game.coppermine == 1){
+        ui.tinmine.div.style.display = "flex"
+    }
+    if (game.house >= 25 &&  game.tinmine == 1){
+        ui.ironmine.div.style.display = "flex"
+    }
+    if (game.house >= 30 &&  game.ironmine == 1){
+        
+        ui.smelter.upgrade_btn.disabled = false;
+        ui.smelter.upgrade_btn.innerHTML = `50 <img src="static/iron_ingot.png"> 100 <img src="static/block.png"> 100 <img src="static/plank.png">`
+
+    }
+    if (game.house >= 35 &&  game.smelter == 2){
+
+        ui.blacksmith.div.style.display = "flex"
+        
+    }
+    if (game.house == 50){
+        ui.house.upgrade_btn.disabled = true;
+    }
+
     if (game.sawmill == 1){
         ui.plank.div.style.display = "flex";
         ui.sawmill.upgrade_btn.disabled = true;
+    }
+    if (game.quarry == 1){
+        ui.stone.div.style.display = "flex";
+        ui.quarry.upgrade_btn.disabled = true;
+    }
+    if (game.stonemason == 1){
+        ui.blocks.div.style.display = "flex";
+        ui.stonemason.upgrade_btn.disabled = true;
+    }
+    if (game.coppermine == 1){
+        ui.copperore.div.style.display = "flex"
+        ui.coppermine.upgrade_btn.disabled = true;
+    }
+    
+    if (game.smelter == 1 && game.coppermine == 1 && game.house < 30){
+        ui.copperingot.div.style.display = "flex"
+        ui.smelter.upgrade_btn.disabled = true;
+    }
+    if (game.smelter == 1 && game.tinmine == 1){
+        ui.tinore.div.style.display = "flex"
+        ui.tiningot.div.style.display = "flex"
+        ui.tinmine.upgrade_btn.disabled = true;
+    }
+    if (game.smelter == 1 && game.ironmine == 1){
+        ui.ironore.div.style.display = "flex"
+        ui.ironingot.div.style.display = "flex"
+        ui.ironmine.upgrade_btn.disabled = true;
+
+    }
+    if (game.smelter == 2){
+        ui.bronzeingot.div.style.display = "flex"
+        ui.smelter.upgrade_btn.disabled = true;
+    }
+    if (game.blacksmith == 1 ){
+        ui.tools.div.style.display = "flex"
+        ui.nails.div.style.display = "flex"
+        ui.blacksmith.upgrade_btn.disabled = true;
     }
 }
 

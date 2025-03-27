@@ -262,10 +262,12 @@
     margin-left: 10px;
     margin-right: 10px;
     
+    
 }
 
 .material_line > * {
     flex: 1;
+    text-align: center;
 }
 
 .material_line .w1 {
@@ -288,9 +290,18 @@ button {
     width: 100px;
 }
 
-.build_btn {
-    width: 120px;
+.build_div {
+    display: flex;
 }
+
+.build_div button {
+    flex-grow: 1;
+}
+
+.test {
+    justify-content: space-between;
+}
+
 
 html,
 body,

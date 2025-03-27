@@ -130,6 +130,41 @@ const ui = {
         value: document.getElementById("spnSawmillValue"),
         upgrade_btn: document.getElementById("btnBuildSawmill"),
     },
+    quarry: {
+        div: document.getElementById("quarry"),
+        value: document.getElementById("spnQuarryValue"),
+        upgrade_btn: document.getElementById("btnBuildQuarry"),
+    },
+    stonemason: {
+        div: document.getElementById("stonemason"),
+        value: document.getElementById("spnStonemasonValue"),
+        upgrade_btn: document.getElementById("btnBuildStonemason"),
+    },
+    coppermine: {
+        div: document.getElementById("coppermine"),
+        value: document.getElementById("spnCopperMineValue"),
+        upgrade_btn: document.getElementById("btnBuildCopperMine"),
+    },
+    tinmine: {
+        div: document.getElementById("tinmine"),
+        value: document.getElementById("spnTinMineValue"),
+        upgrade_btn: document.getElementById("btnBuildTinMine"),
+    },
+    ironmine: {
+        div: document.getElementById("ironmine"),
+        value: document.getElementById("spnIronMineValue"),
+        upgrade_btn: document.getElementById("btnBuildIronMine"),
+    },
+    smelter: {
+        div: document.getElementById("smelter"),
+        value: document.getElementById("spnSmelterValue"),
+        upgrade_btn: document.getElementById("btnBuildSmelter"),
+    },
+    blacksmith: {
+        div: document.getElementById("blacksmith"),
+        value: document.getElementById("spnBlacksmithValue"),
+        upgrade_btn: document.getElementById("btnBuildBlacksmith"),
+    },
     menuselector: document.getElementById("menuselector"),
 }
 
@@ -257,4 +292,11 @@ function updateUI() {
     
     ui.house.value.textContent = game.house
     ui.sawmill.value.textContent = game.sawmill
+    ui.quarry.value.textContent = game.quarry
+    ui.stonemason.value.textContent = game.stonemason
+    ui.coppermine.value.textContent = game.coppermine
+    ui.tinmine.value.textContent = game.tinmine
+    ui.ironmine.value.textContent = game.ironmine
+    ui.smelter.value.textContent = game.smelter
+    ui.blacksmith.value.textContent = game.blacksmith
 }
