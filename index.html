@@ -38,17 +38,22 @@
   </div>
   <div id="suburb" class="tabcontent">
     <div class="main_container">
+      <div class="head_1">
+        <div class="name_head1">&nbsp</div> <!--  пустой div-зашлушка -->
+        <div class="head_menu material_line">
+          <div>&lt Предмет &gt</div>
+          <div>&lt Улучшение &gt</div>
+          <div>&lt Количество &gt</div>
+          <div>&lt Продажа &gt</div>
+        </div>  
+    </div>
+    <div class="head_2">
+      <div class="name_head2">
+        <div>&lt Управление ></div>
+      </div>
+    </div>
       <div class="material">
-        <div class="name_mat">Добыча</div>
-        <!-- <div class="head_mat material_line">
-            <div class="gridItemBorder">Материал</div>
-            <div class="gridItemBorder">Улучшение</div>
-            <div class="gridItemBorder">Количество</div>
-            <div class="gridItemBorder">Продажа</div>
-        </div> -->
-
-        
-
+        <div class="name_mat">Добыча &gt</div>
         <div id="wood" class="material_line">
           <div>Бревна (<span id="spnWoodUpgLevel">0</span>)</div>
           <div><button id="btnUpgWood" class="base_btn"><span id="spnWoodUpg">10</span> <img src="static/coin.png"></button></div>
@@ -85,7 +90,7 @@
         </div>
       </div>
       <div class="recycling">
-        <div class="name_recyc">Переработка</div>
+        <div class="name_recyc">Переработка &gt</div>
 
         <!-- <div class="head_rec material_line">
           <div class="gridItemBorder">Материал</div>
@@ -94,7 +99,7 @@
           <div class="gridItemBorder">Продажа</div>
         </div> -->
 
-        <div id="planks" class="material_line" style="display: none;">
+        <div id="plank" class="material_line" style="display: none;">
           <div>Доски (<span id="spnPlankUpgLevel">0</span>)</div>
           <div><button id="btnUpgPlank" class="base_btn"><span id="spnPlankUpg">100</span> <img src="static/coin.png"></button> </div>
           <div class="tooltip" data-tooltip-content="#tooltip_plank"><span id="spnPlankValue">0</span> <img src="static/plank.png"> (<span id="spnPlankRate">0</span>/c)</div>
@@ -137,7 +142,7 @@
         </div>
       </div>
       <div class="production">
-        <div class="name_prod">Производство</div>
+        <div class="name_prod">Производство &gt</div>
 
         <!-- <div class="head_prod material_line">
           <div class="gridItemBorder">Предмет</div>
@@ -211,37 +216,37 @@
           <div class="gridItemBorder">Построено</div>
         </div> -->
 
-        <div class="material_line ml-p">
+        <div id="house" class="material_line ml-p">
           <div>Дом</div>
-          <div><button id="btnBuildHouse" class="build_btn">10 <img src="static/wood.png"><img src="static/hammer.png"></button></div>
+          <div ><button id="btnBuildHouse" class="build_btn">10 <img src="static/wood.png"><img src="static/hammer.png"></button></div>
           <div><span id="spnHouseValue">0</span>/50 <img src="static/house.png"></div>
         </div>
 
-        <div class="material_line">
+        <div id="sawmill" class="material_line" style="display: none;">
           <div>Лесопилка</div>
           <div><button id="btnBuildSawmill" class="build_btn">50 <img src="static/wood.png"><img src="static/hammer.png"></button></div>
           <div><span id="spnSawmillValue">0</span>/1 <img src="static/house.png"></div>
         </div>
 
-        <div class="material_line">
+        <div class="material_line" style="display: none;">
           <div>Карьер</div>
           <div><button id="btnBuildQuarry" class="build_btn">100 <img src="static/wood.png"> 50 <img src="static/plank.png"><img src="static/hammer.png"></button></div>
           <div><span id="spnQuarryValue">0</span>/1 <img src="static/house.png"></div>
         </div>
 
-        <div class="material_line">
+        <div class="material_line" style="display: none;">
           <div>Медная шахта</div>
           <div><button id="btnBuildCopperMine" class="build_btn">50 <img src="static/plank.png"><img src="static/hammer.png"></button></div>
           <div><span id="spnCopperMineValue">0</span>/1 <img src="static/house.png"></div>
         </div>
 
-        <div class="material_line">
+        <div class="material_line" style="display: none;">
           <div>Оловянная шахта</div>
           <div><button id="btnBuildTinMine" class="build_btn">50 <img src="static/copper_ingot.png"><img src="static/hammer.png"></button></div>
           <div><span id="spnTinMineValue">0</span>/1 <img src="static/house.png"></div>
         </div>
 
-        <div class="material_line">
+        <div class="material_line" style="display: none;">
           <div>Железная шахта</div>
           <div><button id="btnBuildIronMine" class="build_btn">50 <img src="static/copper_ingot.png"> 50 <img src="static/tin_ingot.png"><img src="static/hammer.png"></button></div>
           <div><span id="spnIronMineValue">0</span>/1 <img src="static/house.png"></div>

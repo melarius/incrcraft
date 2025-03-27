@@ -41,7 +41,13 @@ let game = {
     nails: 0,
     nailsGrowth: 1,
     nailsUpgLevel: 0,
-    house:0
+    house: 0,
+    sawmill: 0
+
+}
+
+const milestones = {
+    1:0
 }
 
 const updrademulti = {
@@ -113,8 +119,8 @@ const production = {
 function TestFunc() {
     // btn = document.getElementById("btnTest_1")
     // btn.innerHTML = `10 <img src="static/tools.png"> 100 <img src="static/coin.png">`
-    console.log(Construct({"wood":10}, "house"))
-    console.log("house: ", game.house)
+    console.log(Construct({"wood":50}, "sawmill"))
+    console.log("sawmill: ", game.sawmill)
 }
 
 function ShowAll(){
@@ -224,6 +230,16 @@ function updateButtons() {
             }
             
         }
+    }
+}
+
+function Milestones() {
+    if (game.house >= 2){
+        ui.sawmill.div.style.display = "flex";
+    }
+    if (game.sawmill == 1){
+        ui.plank.div.style.display = "flex";
+        ui.sawmill.upgrade_btn.disabled = true;
     }
 }
 

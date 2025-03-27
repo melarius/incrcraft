@@ -3,6 +3,7 @@ const ui = {
     chop: document.getElementById("btnChopTrees"),
     sellall: document.getElementById("btnSellAll"),
     wood: {
+        div: document.getElementById("wood"),
         value: document.getElementById("spnWoodValue"),
         upgrade_btn: document.getElementById("btnUpgWood"),
         upgrade: document.getElementById("spnWoodUpg"),
@@ -11,6 +12,7 @@ const ui = {
         sell: document.getElementById("btnSellWood")
     },
     stone: {
+        div: document.getElementById("stone"),
         value: document.getElementById("spnStoneValue"),
         upgrade_btn: document.getElementById("btnUpgStone"),
         upgrade: document.getElementById("spnStoneUpg"),
@@ -19,6 +21,7 @@ const ui = {
         sell: document.getElementById("btnSellStone")
     },
     copperore: {
+        div: document.getElementById("copperore"),
         value: document.getElementById("spnCopperOreValue"),
         upgrade_btn: document.getElementById("btnUpgCopperOre"),
         upgrade: document.getElementById("spnCopperOreUpg"),
@@ -27,6 +30,7 @@ const ui = {
         sell: document.getElementById("btnSellCopperOre")
     },
     tinore: {
+        div: document.getElementById("tinore"),
         value: document.getElementById("spnTinOreValue"),
         upgrade_btn: document.getElementById("btnUpgTinOre"),
         upgrade: document.getElementById("spnTinOreUpg"),
@@ -35,6 +39,7 @@ const ui = {
         sell: document.getElementById("btnSellTinOre")
     },
     ironore: {
+        div: document.getElementById("ironore"),
         value: document.getElementById("spnIronOreValue"),
         upgrade_btn: document.getElementById("btnUpgIronOre"),
         upgrade: document.getElementById("spnIronOreUpg"),
@@ -43,6 +48,7 @@ const ui = {
         sell: document.getElementById("btnSellIronOre")
     },
     plank: {
+        div: document.getElementById("plank"),
         value: document.getElementById("spnPlankValue"),
         upgrade_btn: document.getElementById("btnUpgPlank"),
         upgrade: document.getElementById("spnPlankUpg"),
@@ -52,6 +58,7 @@ const ui = {
     },
     
     blocks: {
+        div: document.getElementById("blocks"),
         value: document.getElementById("spnBlocksValue"),
         upgrade_btn: document.getElementById("btnUpgBlocks"),
         upgrade: document.getElementById("spnBlocksUpg"),
@@ -60,6 +67,7 @@ const ui = {
         sell: document.getElementById("btnSellBlocks")
     },
     copperingot: {
+        div: document.getElementById("copperingot"),
         value: document.getElementById("spnCopperIngotValue"),
         upgrade_btn: document.getElementById("btnUpgCopperIngot"),
         upgrade: document.getElementById("spnCopperIngotUpg"),
@@ -68,6 +76,7 @@ const ui = {
         sell: document.getElementById("btnSellCopperIngot")
     },
     tiningot: {
+        div: document.getElementById("tiningot"),
         value: document.getElementById("spnTinIngotValue"),
         upgrade_btn: document.getElementById("btnUpgTinIngot"),
         upgrade: document.getElementById("spnTinIngotUpg"),
@@ -76,6 +85,7 @@ const ui = {
         sell: document.getElementById("btnSellTinIngot")
     },
     ironingot: {
+        div: document.getElementById("ironingot"),
         value: document.getElementById("spnIronIngotValue"),
         upgrade_btn: document.getElementById("btnUpgIronIngot"),
         upgrade: document.getElementById("spnIronIngotUpg"),
@@ -84,6 +94,7 @@ const ui = {
         sell: document.getElementById("btnSellIronIngot")
     },
     bronzeingot: {
+        div: document.getElementById("bronzeingot"),
         value: document.getElementById("spnBronzeIngotValue"),
         upgrade_btn: document.getElementById("btnUpgBronzeIngot"),
         upgrade: document.getElementById("spnBronzeIngotUpg"),
@@ -92,6 +103,7 @@ const ui = {
         sell: document.getElementById("btnSellBronzeIngot")
     },
     tools: {
+        div: document.getElementById("tools"),
         value: document.getElementById("spnToolsValue"),
         upgrade_btn: document.getElementById("btnUpgTools"),
         upgrade: document.getElementById("spnToolsUpg"),
@@ -100,6 +112,7 @@ const ui = {
         sell: document.getElementById("btnSellTools")
     },
     nails: {
+        div: document.getElementById("nails"),
         value: document.getElementById("spnNailsValue"),
         upgrade_btn: document.getElementById("btnUpgNails"),
         upgrade: document.getElementById("spnNailsUpg"),
@@ -108,8 +121,14 @@ const ui = {
         sell: document.getElementById("btnSellNails")
     },
     house: {
+        div: document.getElementById("house"),
         value: document.getElementById("spnHouseValue"),
         upgrade_btn: document.getElementById("btnBuildHouse"),
+    },
+    sawmill: {
+        div: document.getElementById("sawmill"),
+        value: document.getElementById("spnSawmillValue"),
+        upgrade_btn: document.getElementById("btnBuildSawmill"),
     },
     menuselector: document.getElementById("menuselector"),
 }
@@ -117,6 +136,7 @@ const ui = {
 function updateUI() {
     ui.money.textContent = game.money;
     updateButtons()
+    Milestones()
 
     ui.wood.value.textContent = game.wood;
     if (game.woodUpgLevel === 0) {
@@ -236,4 +256,5 @@ function updateUI() {
     ui.nails.level.textContent = game.nailsUpgLevel;
     
     ui.house.value.textContent = game.house
+    ui.sawmill.value.textContent = game.sawmill
 }

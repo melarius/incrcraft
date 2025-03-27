@@ -224,6 +224,10 @@ ui.house.upgrade_btn.addEventListener("click", function (){
     updateUI()
 })
 
+ui.sawmill.upgrade_btn.addEventListener("click", function (){
+    Construct({"wood":50}, "sawmill")
+    updateUI()
+})
 
 ui.menuselector.addEventListener("change", function (evt) {
     if (evt.target.value === "Save") {
