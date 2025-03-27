@@ -198,14 +198,14 @@
             <button id="btnSellAll" style="width: 140px;">Продать всё <img src="static/money-bag.png"></button>
           </div>
         </div>
-        <div class="test">
+        <!-- <div class="test">
           <div style="place-self: center;">
             <button id="btnTest" style="width: 120px;" onclick="TestFunc()">Тестирование</button>
           </div>
           <div style="place-self: center;">
             <button id="btnTest_1" style="width: 120px;" onclick="ShowAll()">Show All</button>
           </div>
-        </div>
+        </div> -->
       </div>
       
       <div class="build">
@@ -220,6 +220,12 @@
           <div>Дом</div>
           <div class="build_div"><button id="btnBuildHouse">10 <img src="static/wood.png"><img src="static/hammer.png"></button></div>
           <div><span id="spnHouseValue">0</span>/50 <img src="static/house.png"></div>
+        </div>
+
+        <div id="wall" class="material_line">
+          <div>Стены</div>
+          <div class="build_div"><button id="btnBuildWall">50 <img src="static/block.png"><img src="static/hammer.png"></button></div>
+          <div><span id="spnWallValue">0</span>/25 <img src="static/house.png"></div>
         </div>
 
         <div id="sawmill" class="material_line" style="display: none;">
@@ -268,6 +274,12 @@
           <div>Кузница</div>
           <div class="build_div"><button id="btnBuildBlacksmith" > 50 <img src="static/plank.png"> 50 <img src="static/bronze_ingot.png"> 50 <img src="static/iron_ingot.png"><img src="static/hammer.png"></button></div>
           <div><span id="spnBlacksmithValue">0</span>/1 <img src="static/house.png"></div>
+        </div>
+
+        <div id="castle_build" class="material_line" style="display: none;">
+          <div>Замок</div>
+          <div class="build_div"><button id="btnBuildCastle" > 20 <img src="static/nails.png"> 50 <img src="static/tools.png"> 100 <img src="static/block.png"><img src="static/hammer.png"></button></div>
+          <div><span id="spnCastleValue">0</span>/10 <img src="static/house.png"></div>
         </div>
 
         

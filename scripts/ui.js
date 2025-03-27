@@ -125,6 +125,11 @@ const ui = {
         value: document.getElementById("spnHouseValue"),
         upgrade_btn: document.getElementById("btnBuildHouse"),
     },
+    wall: {
+        div: document.getElementById("wall"),
+        value: document.getElementById("spnWallValue"),
+        upgrade_btn: document.getElementById("btnBuildWall"),
+    },
     sawmill: {
         div: document.getElementById("sawmill"),
         value: document.getElementById("spnSawmillValue"),
@@ -164,6 +169,11 @@ const ui = {
         div: document.getElementById("blacksmith"),
         value: document.getElementById("spnBlacksmithValue"),
         upgrade_btn: document.getElementById("btnBuildBlacksmith"),
+    },
+    castle: {
+        div: document.getElementById("castle_build"),
+        value: document.getElementById("spnCastleValue"),
+        upgrade_btn: document.getElementById("btnBuildCastle"),
     },
     menuselector: document.getElementById("menuselector"),
 }
@@ -291,6 +301,7 @@ function updateUI() {
     ui.nails.level.textContent = game.nailsUpgLevel;
     
     ui.house.value.textContent = game.house
+    ui.wall.value.textContent = game.wall
     ui.sawmill.value.textContent = game.sawmill
     ui.quarry.value.textContent = game.quarry
     ui.stonemason.value.textContent = game.stonemason
@@ -299,4 +310,5 @@ function updateUI() {
     ui.ironmine.value.textContent = game.ironmine
     ui.smelter.value.textContent = game.smelter
     ui.blacksmith.value.textContent = game.blacksmith
+    ui.castle.value.textContent = game.castle
 }

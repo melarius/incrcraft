@@ -269,6 +269,16 @@ ui.blacksmith.upgrade_btn.addEventListener("click", function (){
     updateUI()
 })
 
+ui.wall.upgrade_btn.addEventListener("click", function (){
+    Construct({"blocks":50}, "wall")
+    updateUI()
+})
+
+ui.castle.upgrade_btn.addEventListener("click", function (){
+    Construct({"nails":20, "tools":50, "blocks":100}, "castle")
+    updateUI()
+})
+
 ui.menuselector.addEventListener("change", function (evt) {
     if (evt.target.value === "Save") {
         localStorage.setItem('gameTutorial', JSON.stringify(game));

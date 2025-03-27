@@ -1,7 +1,7 @@
 
 
 let game = {
-    money: 1000000,
+    money: 0,
     wood: 0,
     woodGrowth: 1,
     woodUpgLevel: 0,
@@ -50,6 +50,8 @@ let game = {
     ironmine: 0,
     smelter:0,
     blacksmith: 0,
+    wall:0,
+    castle:0,
 
 }
 
@@ -138,14 +140,14 @@ function ShowAll(){
 
 
 
-let win_condition = 10000000000000;
+let win_condition = 10;
 let plankBasePrice = 100;
 let showExport = 0;
 let countdown = 30;
 
 myTimer = setInterval(endOfTurnCalc, 1000);
 function endOfTurnCalc() {
-    if (game.blocks < win_condition) {
+    if (game.castle <= 10) {
         let wood_prod_rate = (game.woodGrowth * game.woodUpgLevel) - (game.plankUpgLevel * production.plank) - (game.toolsUpgLevel * production.tools.wood)
         let stone_prod_rate = (game.stoneGrowth * game.stoneUpgLevel) - (game.blocksUpgLevel * production.blocks)
         let copperore_prod_rate = (game.copperoreGrowth * game.copperoreUpgLevel) - (game.copperingotUpgLevel * production.copperingot)
@@ -203,15 +205,18 @@ function endOfTurnCalc() {
 
         
         updateUI();
-    } else {
+    } if (game.castle == 10 && game.wall == 25 && game.house == 50) {
         winGame();
     }
 }
 
 function winGame() {
     clearTimeout(myTimer);
-    alert("Вы достигли цели! Вы накопили " + win_condition.toString());
-    myRestartTimer = setInterval(restartGameDialog, 2000);
+    Swal.fire({
+        title: "Вы победили!!!",
+        text: "Ждите апдейта с продолжением!",
+        icon: "success"
+    });
 }
 
 function updateButtons() {
@@ -244,34 +249,43 @@ function Milestones() {
         ui.sawmill.div.style.display = "flex";
     }
     if (game.house >= 15 && game.sawmill == 1){
-        ui.quarry.div.style.display = "flex"
+        ui.quarry.div.style.display = "flex";
     }
     if (game.house >= 18 &&  game.quarry == 1){
-        ui.stonemason.div.style.display = "flex"
+        ui.stonemason.div.style.display = "flex";
     }
     if (game.house >= 20 &&  game.stonemason == 1){
-        ui.coppermine.div.style.display = "flex"
-        ui.smelter.div.style.display = "flex"
+        ui.coppermine.div.style.display = "flex";
+        ui.smelter.div.style.display = "flex";
     }
     if (game.house >= 23 &&  game.coppermine == 1){
-        ui.tinmine.div.style.display = "flex"
+        ui.tinmine.div.style.display = "flex";
     }
     if (game.house >= 25 &&  game.tinmine == 1){
-        ui.ironmine.div.style.display = "flex"
+        ui.ironmine.div.style.display = "flex";
     }
     if (game.house >= 30 &&  game.ironmine == 1){
         
         ui.smelter.upgrade_btn.disabled = false;
-        ui.smelter.upgrade_btn.innerHTML = `50 <img src="static/iron_ingot.png"> 100 <img src="static/block.png"> 100 <img src="static/plank.png">`
+        ui.smelter.upgrade_btn.innerHTML = `50 <img src="static/iron_ingot.png"> 100 <img src="static/block.png"> 100 <img src="static/plank.png">`;
 
     }
     if (game.house >= 35 &&  game.smelter == 2){
 
-        ui.blacksmith.div.style.display = "flex"
+        ui.blacksmith.div.style.display = "flex";
         
+    }
+    if (game.house >= 40 && game.wall >= 10){
+        ui.castle.div.style.display = "flex";
+    }
+    if (game.wall == 25){
+        ui.wall.upgrade_btn.disabled =true;
     }
     if (game.house == 50){
         ui.house.upgrade_btn.disabled = true;
+    }
+    if (game.castle == 10){
+        ui.castle.upgrade_btn.disabled = true;
     }
 
     if (game.sawmill == 1){
