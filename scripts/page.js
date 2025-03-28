@@ -17,6 +17,11 @@ function gameLoad(){
     btn = document.getElementById("m_btn1");
     tab.style.display = "block";
     btn.className += " active";
+    Swal.fire({
+      title: "Добро пожаловать!",
+      text: "Чтобы победить вам необходмо построить Замок!",
+      icon: "success"
+  });
 }
 
 function showTooltip(element, text) {
