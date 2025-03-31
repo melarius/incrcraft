@@ -15,20 +15,20 @@ function gameLoad(){
     loadScript('scripts/page.js')
     loadScript('scripts/upgrades.js')
 
-    tab = document.getElementById("upgrades");
-    btn = document.getElementById("m_btn4");
-    tab.style.display = "block";
-    btn.className += " active";
-
-    // tab = document.getElementById("city");
-    // btn = document.getElementById("m_btn1");
+    // tab = document.getElementById("upgrades");
+    // btn = document.getElementById("m_btn4");
     // tab.style.display = "block";
     // btn.className += " active";
-//     Swal.fire({
-//       title: "Добро пожаловать!",
-//       html: `Наконец-то мы прибыли. Это место подойдёт для строительства нового города.\n 
-//       Необходимо начать заготавливать бревна и строить дома.\n 
-//       Страрый торговец сказал, что у него есть возможность продать наши излишки на рынке Королевства.`.replace(/\n/g, '<br>'),
-//       icon: "success"
-//   });
+
+    tab = document.getElementById("city");
+    btn = document.getElementById("m_btn1");
+    tab.style.display = "block";
+    btn.className += " active";
+    Swal.fire({
+      title: "Добро пожаловать!",
+      html: `Наконец-то мы прибыли. Это место подойдёт для строительства нового города.\n 
+      Необходимо начать заготавливать бревна и строить дома.\n 
+      Страрый торговец сказал, что у него есть возможность продать наши излишки на рынке Королевства.`.replace(/\n/g, '<br>'),
+      icon: "success"
+  });
 }

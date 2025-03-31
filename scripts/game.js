@@ -32,7 +32,7 @@ function endOfTurnCalc() {
         let tiningot_prod_rate = (game.tiningotGrowth * game.tiningotUpgLevel) - (game.bronzeingotUpgLevel * production.bronzeingot.tiningot)
         let ironingot_prod_rate = (game.ironingotGrowth * game.ironingotUpgLevel) - (game.toolsUpgLevel * production.tools.ironingot) - (game.nailsUpgLevel * production.nails)
 
-        game.taxes = game.population * (game.taxesUpgLevel * game.taxesGrowth)
+        game.taxes = parseFloat((game.population * (game.taxesUpgLevel +  game.taxesGrowth / 10)).toFixed(1))
 
         game.money += game.taxes
         if (game.wood + wood_prod_rate >= 0) {

@@ -1,9 +1,10 @@
 let game = {
-    money: 10000000,
+    money: 0,
     population: 0,
     taxes: 0,
     taxesUpgLevel: 0,
-    taxesGrowth: 1,
+    taxesmodUpgLevel:0,
+    taxesGrowth: 0,
     wood: 0,
     woodGrowth: 1,
     woodUpgLevel: 0,
@@ -108,7 +109,8 @@ const baseprice = {
     bronzeingot: 1500,
     tools: 1000,
     nails: 1000,
-    taxupgrade: 10000
+    taxupgrade: 10000,
+    taxmodupgrade: 10000
 }
 
 const production = {

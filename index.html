@@ -26,7 +26,7 @@
     <button class="tablinks" id="m_btn1" onclick="openTab(event, 'city')">Город</button>
     <button class="tablinks" id="m_btn2" onclick="openTab(event, 'castle')">Замок</button>
     <button class="tablinks" id="m_btn3" onclick="openTab(event, 'outerworld')">Запределье</button>
-    <button class="tablinks" id="m_btn4" onclick="openTab(event, 'upgrades')">Улучшения</button>
+    <button class="tablinks bl" id="m_btn4" onclick="openTab(event, 'upgrades')">Улучшения</button>
     <select class='tablinks select' id="menuselector">
       <option class='head' style="text-align: center;" value="menu">Меню</option>
       <hr />
@@ -306,9 +306,14 @@
       <div class="taxes">
         <div class="taxes_head">Налоги</div>
         <div class="upgrade_line">
-          <div><b>Налоги</b><br>Открывает налоги. Что может быть лучше, чем пассивное получение монет.<br><i>- Прирост: насленеие * (уровень улучшения * модификатор налогов (по-умолчанию 1))</i></div>
-          <div><button id="btnUpgTaxes"><span id="spnTaxesUpg">10 000</span> <img src="static/coin.png"></button></div>
-          <div><span id="spnTaxexUpgValue">0</span>/5</div>
+          <div><b>Налоги</b><br>Открывает налоги. Что может быть лучше, чем пассивное получение монет.<br><i>- Прирост: насленеие * (уровень улучшения * модификатор налогов / 10 (по-умолчанию 1))</i></div>
+          <div class="c"><button id="btnUpgTaxes"><span id="spnTaxesUpg">10 000</span> <img src="static/coin.png"></button></div>
+          <div class="c"><span id="spnTaxesUpgValue">0</span>/5</div>
+        </div>
+        <div class="upgrade_line">
+          <div><b>Проценты</b><br>Пытаемся ответить на главный вопрос: "Могут ли камни платить налоги?".<br><i>- Добавляет к модификатору налогов (10/уровень)</i></div>
+          <div class="c"><button id="btnUpgTaxesMod"><span id="spnTaxesModUpg">20 000</span> <img src="static/coin.png"></button></div>
+          <div class="c"><span id="spnTaxesModUpgValue">0</span>/10</div>
         </div>
 
 
