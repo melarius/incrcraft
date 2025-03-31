@@ -179,11 +179,11 @@ const ui = {
 }
 
 function updateUI() {
-    ui.money.textContent = game.money;
+    ui.money.textContent = game.money.toLocaleString();
     updateButtons()
     Milestones()
 
-    ui.wood.value.textContent = game.wood;
+    ui.wood.value.textContent = game.wood.toLocaleString();
     if (game.woodUpgLevel === 0) {
         ui.plank.upgrade.textContent = baseprice.wood;
     } else {
@@ -192,7 +192,7 @@ function updateUI() {
     ui.wood.rate.textContent = (game.woodGrowth * game.woodUpgLevel) - (game.plankUpgLevel * production.plank) - (game.toolsUpgLevel * production.tools.wood);
     ui.wood.level.textContent = game.woodUpgLevel;
 
-    ui.plank.value.textContent = game.plank;
+    ui.plank.value.textContent = game.plank.toLocaleString();
     if (game.plankUpgLevel === 0) {
         ui.plank.upgrade.textContent = baseprice.plank;
     } else {
@@ -201,7 +201,7 @@ function updateUI() {
     ui.plank.rate.textContent = game.plankGrowth * game.plankUpgLevel;
     ui.plank.level.textContent = game.plankUpgLevel;
 
-    ui.stone.value.textContent = game.stone;
+    ui.stone.value.textContent = game.stone.toLocaleString();
     if (game.stoneUpgLevel === 0) {
         ui.stone.upgrade.textContent = baseprice.stone;
     } else {
@@ -210,7 +210,7 @@ function updateUI() {
     ui.stone.rate.textContent = (game.stoneGrowth * game.stoneUpgLevel) - (game.blocksUpgLevel * production.blocks);
     ui.stone.level.textContent = game.stoneUpgLevel;
 
-    ui.copperore.value.textContent = game.copperore;
+    ui.copperore.value.textContent = game.copperore.toLocaleString();
     if (game.copperoreUpgLevel === 0) {
         ui.copperore.upgrade.textContent = baseprice.copperore;
     } else {
@@ -219,7 +219,7 @@ function updateUI() {
     ui.copperore.rate.textContent = (game.copperoreGrowth * game.copperoreUpgLevel) - (game.copperingotUpgLevel * production.copperingot);
     ui.copperore.level.textContent = game.copperoreUpgLevel;
 
-    ui.tinore.value.textContent = game.tinore;
+    ui.tinore.value.textContent = game.tinore.toLocaleString();
     if (game.tinoreUpgLevel === 0) {
         ui.tinore.upgrade.textContent = baseprice.tinore;
     } else {
@@ -228,7 +228,7 @@ function updateUI() {
     ui.tinore.rate.textContent = (game.tinoreGrowth * game.tinoreUpgLevel) - (game.tiningotUpgLevel * production.tiningot);
     ui.tinore.level.textContent = game.tinoreUpgLevel;
 
-    ui.ironore.value.textContent = game.ironore;
+    ui.ironore.value.textContent = game.ironore.toLocaleString();
     if (game.ironoreUpgLevel === 0) {
         ui.ironore.upgrade.textContent = baseprice.ironore;
     } else {
@@ -237,7 +237,7 @@ function updateUI() {
     ui.ironore.rate.textContent = (game.ironoreGrowth * game.ironoreUpgLevel) - (game.ironingotUpgLevel * production.ironingot);
     ui.ironore.level.textContent = game.ironoreUpgLevel;
 
-    ui.blocks.value.textContent = game.blocks;
+    ui.blocks.value.textContent = game.blocks.toLocaleString();
     if (game.blocksUpgLevel === 0) {
         ui.blocks.upgrade.textContent = baseprice.blocks;
     } else {
@@ -246,7 +246,7 @@ function updateUI() {
     ui.blocks.rate.textContent = game.blocksGrowth * game.blocksUpgLevel;
     ui.blocks.level.textContent = game.blocksUpgLevel;
 
-    ui.copperingot.value.textContent = game.copperingot;
+    ui.copperingot.value.textContent = game.copperingot.toLocaleString();
     if (game.copperingotUpgLevel === 0) {
         ui.copperingot.upgrade.textContent = baseprice.copperingot;
     } else {
@@ -255,7 +255,7 @@ function updateUI() {
     ui.copperingot.rate.textContent = (game.copperingotGrowth * game.copperingotUpgLevel) - (game.bronzeingotUpgLevel * production.bronzeingot.copperingot);
     ui.copperingot.level.textContent = game.copperingotUpgLevel;
 
-    ui.tiningot.value.textContent = game.tiningot;
+    ui.tiningot.value.textContent = game.tiningot.toLocaleString();
     if (game.tiningotUpgLevel === 0) {
         ui.tiningot.upgrade.textContent = baseprice.tiningot;
     } else {
@@ -264,7 +264,7 @@ function updateUI() {
     ui.tiningot.rate.textContent = (game.tiningotGrowth * game.tiningotUpgLevel) - (game.bronzeingotUpgLevel * production.bronzeingot.tiningot);
     ui.tiningot.level.textContent = game.tiningotUpgLevel;
 
-    ui.ironingot.value.textContent = game.ironingot;
+    ui.ironingot.value.textContent = game.ironingot.toLocaleString();
     if (game.ironingotUpgLevel === 0) {
         ui.ironingot.upgrade.textContent = baseprice.ironingot;
     } else {
@@ -273,7 +273,7 @@ function updateUI() {
     ui.ironingot.rate.textContent = (game.ironingotGrowth * game.ironingotUpgLevel) - (game.toolsUpgLevel * production.tools.ironingot) - (game.nailsUpgLevel * production.nails);
     ui.ironingot.level.textContent = game.ironingotUpgLevel;
 
-    ui.bronzeingot.value.textContent = game.bronzeingot;
+    ui.bronzeingot.value.textContent = game.bronzeingot.toLocaleString();
     if (game.bronzeingotUpgLevel === 0) {
         ui.bronzeingot.upgrade.textContent = baseprice.bronzeingot;
     } else {
@@ -282,7 +282,7 @@ function updateUI() {
     ui.bronzeingot.rate.textContent = game.bronzeingotGrowth * game.bronzeingotUpgLevel * 4;
     ui.bronzeingot.level.textContent = game.bronzeingotUpgLevel;
 
-    ui.tools.value.textContent = game.tools;
+    ui.tools.value.textContent = game.tools.toLocaleString()
     if (game.toolsUpgLevel === 0) {
         ui.tools.upgrade.textContent = baseprice.tools;
     } else {
@@ -291,7 +291,7 @@ function updateUI() {
     ui.tools.rate.textContent = game.toolsGrowth * game.toolsUpgLevel;
     ui.tools.level.textContent = game.toolsUpgLevel;
 
-    ui.nails.value.textContent = game.nails;
+    ui.nails.value.textContent = game.nails.toLocaleString();
     if (game.nailsUpgLevel === 0) {
         ui.nails.upgrade.textContent = baseprice.nails;
     } else {

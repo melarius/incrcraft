@@ -1,7 +1,7 @@
 
 
 let game = {
-    money: 0,
+    money: 10000000,
     wood: 0,
     woodGrowth: 1,
     woodUpgLevel: 0,
@@ -245,38 +245,92 @@ function updateButtons() {
 }
 
 function Milestones() {
-    if (game.house >= 10){
+    if (game.house >= 10 && ui.sawmill.div.style.display != "flex"){
         ui.sawmill.div.style.display = "flex";
+        Swal.fire({
+            title: "Мы ближе к цели!",
+            html: `У нас теперь достаточно жителей, чтобы построить лесопилку и начать обрабатывать бревна.\n 
+            Мы стали на шаг ближе к цели!.`.replace(/\n/g, '<br>'),
+            icon: "success"
+        });
     }
-    if (game.house >= 15 && game.sawmill == 1){
+    if (game.house >= 15 && game.sawmill == 1 && ui.quarry.div.style.display != "flex"){
         ui.quarry.div.style.display = "flex";
+        Swal.fire({
+            title: "Мы ближе к цели!",
+            html: `Больше жителей - больше свободных рук!\n 
+            Теперь мы можем построить карьер для добычи камня.`.replace(/\n/g, '<br>'),
+            icon: "success"
+        });
     }
-    if (game.house >= 18 &&  game.quarry == 1){
+    if (game.house >= 18 &&  game.quarry == 1 && ui.stonemason.div.style.display != "flex"){
         ui.stonemason.div.style.display = "flex";
+        Swal.fire({
+            title: "Мы ближе к цели!",
+            html: `Добыча камня - это важный процесс, но из необработанного камня стены не построить.\n 
+            Нам необходима мастерская каменщика!.`.replace(/\n/g, '<br>'),
+            icon: "success"
+        });
     }
-    if (game.house >= 20 &&  game.stonemason == 1){
+    if (game.house >= 20 &&  game.stonemason == 1 && ui.coppermine.div.style.display != "flex" && ui.smelter.div.style.display != "flex"){
         ui.coppermine.div.style.display = "flex";
         ui.smelter.div.style.display = "flex";
+        Swal.fire({
+            title: "Мы ближе к цели!",
+            html: `Разведчики нашли залежи меди недалеко от карьера.\n 
+            Это отличная возможность начать добычу и переплавку металлов!`.replace(/\n/g, '<br>'),
+            icon: "success"
+        });
     }
-    if (game.house >= 23 &&  game.coppermine == 1){
+    if (game.house >= 23 &&  game.coppermine == 1 && ui.tinmine.div.style.display != "flex"){
         ui.tinmine.div.style.display = "flex";
+        Swal.fire({
+            title: "Мы ближе к цели!",
+            html: `Мы нашли залежи олова.\n 
+            Больше материалов на переработку и продажу.`.replace(/\n/g, '<br>'),
+            icon: "success"
+        });
     }
-    if (game.house >= 25 &&  game.tinmine == 1){
+    if (game.house >= 25 &&  game.tinmine == 1 && ui.ironmine.div.style.display != "flex"){
         ui.ironmine.div.style.display = "flex";
+        Swal.fire({
+            title: "Мы ближе к цели!",
+            html: `Это самое лучшее место для города!\n 
+            Мы нашли залежи железа. Вскоре мы сможем начать изготавливать инструменты для нужд посления!`.replace(/\n/g, '<br>'),
+            icon: "success"
+        });
     }
-    if (game.house >= 30 &&  game.ironmine == 1){
+    if (game.house >= 30 &&  game.ironmine == 1 &&  ui.smelter.upgrade_btn.disabled != false &&  ui.smelter.upgrade_btn.innerHTML != `50 <img src="static/iron_ingot.png"> 100 <img src="static/block.png"> 100 <img src="static/plank.png">`){
         
         ui.smelter.upgrade_btn.disabled = false;
         ui.smelter.upgrade_btn.innerHTML = `50 <img src="static/iron_ingot.png"> 100 <img src="static/block.png"> 100 <img src="static/plank.png">`;
+        Swal.fire({
+            title: "Мы ближе к цели!",
+            html: `Время улучшений!\n 
+            Нам нужно улучшить плавильню, чтобы начать изготавливать сплавы.`.replace(/\n/g, '<br>'),
+            icon: "success"
+        });
 
     }
-    if (game.house >= 35 &&  game.smelter == 2){
+    if (game.house >= 35 &&  game.smelter == 2 && ui.blacksmith.div.style.display != "flex"){
 
         ui.blacksmith.div.style.display = "flex";
+        Swal.fire({
+            title: "Мы ближе к цели!",
+            html: `С новой плавильной, мы можем начать изотавливать инструменты и ковать гвозди.\n 
+            Осталось только построить кузницу.`.replace(/\n/g, '<br>'),
+            icon: "success"
+        });
         
     }
-    if (game.house >= 40 && game.wall >= 10){
+    if (game.house >= 40 && game.wall >= 10 && ui.castle.div.style.display != "flex"){
         ui.castle.div.style.display = "flex";
+        Swal.fire({
+            title: "Последний шаг!",
+            html: `Настало время начать строить наш замок.\n 
+            Главное не забывать о оставшихся домах для жителей и стенах для защиты.`.replace(/\n/g, '<br>'),
+            icon: "success"
+        });
     }
     if (game.wall == 25){
         ui.wall.upgrade_btn.disabled =true;
