@@ -1,130 +1,5 @@
 
 
-let game = {
-    money: 10000000,
-    wood: 0,
-    woodGrowth: 1,
-    woodUpgLevel: 0,
-    plank: 0,
-    plankGrowth: 1,
-    plankUpgLevel: 0,
-    stone: 0,
-    stoneGrowth: 1,
-    stoneUpgLevel: 0,
-    blocks: 0,
-    blocksGrowth: 1,
-    blocksUpgLevel: 0,
-    copperore: 0,
-    copperoreGrowth: 1,
-    copperoreUpgLevel: 0,
-    tinore: 0,
-    tinoreGrowth: 1,
-    tinoreUpgLevel: 0,
-    ironore: 0,
-    ironoreGrowth: 1,
-    ironoreUpgLevel: 0,
-    copperingot: 0,
-    copperingotGrowth: 1,
-    copperingotUpgLevel: 0,
-    tiningot: 0,
-    tiningotGrowth: 1,
-    tiningotUpgLevel: 0,
-    ironingot: 0,
-    ironingotGrowth: 1,
-    ironingotUpgLevel: 0,
-    bronzeingot: 0,
-    bronzeingotGrowth: 1,
-    bronzeingotUpgLevel: 0,
-    tools: 0,
-    toolsGrowth: 1,
-    toolsUpgLevel: 0,
-    nails: 0,
-    nailsGrowth: 1,
-    nailsUpgLevel: 0,
-    house: 0,
-    sawmill: 0,
-    quarry: 0,
-    stonemason: 0,
-    coppermine: 0,
-    tinmine: 0,
-    ironmine: 0,
-    smelter:0,
-    blacksmith: 0,
-    wall:0,
-    castle:0,
-
-}
-
-const milestones = {
-    1:0
-}
-
-const updrademulti = {
-    wood: 1,
-    plank: 11,
-    stone: 31,
-    blocks: 51,
-    copperore: 51,
-    tinore: 76,
-    ironingot: 101,
-    copperingot: 501,
-    tiningot: 751,
-    ironingot: 1001,
-    bronzeingot: 1501,
-    tools: 1001,
-    nails: 1001
-    
-}
-
-const sell = {
-    wood: 1,
-    plank: 10,
-    stone: 30,
-    blocks: 50,
-    copperore: 50,
-    tinore: 75,
-    ironore: 100,
-    copperingot: 60,
-    tiningot: 75,
-    ironingot: 100,
-    bronzeingot: 300,
-    tools: 350,
-    nails: 200
-}
-
-const baseprice = {
-    wood: 10,
-    plank: 100,
-    stone: 300,
-    blocks: 500,
-    copperore: 500,
-    tinore: 750,
-    ironore: 1000,
-    copperingot: 750,
-    tiningot: 800,
-    ironingot: 1000,
-    bronzeingot: 1500,
-    tools: 1000,
-    nails: 1000
-}
-
-const production = {
-    plank: 4,
-    blocks: 2,
-    copperingot: 3,
-    tiningot: 2,
-    ironingot: 4,
-    bronzeingot: {
-        copperingot: 4,
-        tiningot: 1
-    },
-    tools: {
-        wood:1,
-        ironingot:2
-    },
-    nails: 2
-}
-
 function TestFunc() {
     // btn = document.getElementById("btnTest_1")
     // btn.innerHTML = `10 <img src="static/tools.png"> 100 <img src="static/coin.png">`
@@ -157,7 +32,9 @@ function endOfTurnCalc() {
         let tiningot_prod_rate = (game.tiningotGrowth * game.tiningotUpgLevel) - (game.bronzeingotUpgLevel * production.bronzeingot.tiningot)
         let ironingot_prod_rate = (game.ironingotGrowth * game.ironingotUpgLevel) - (game.toolsUpgLevel * production.tools.ironingot) - (game.nailsUpgLevel * production.nails)
 
+        game.taxes = game.population * (game.taxesUpgLevel * game.taxesGrowth)
 
+        game.money += game.taxes
         if (game.wood + wood_prod_rate >= 0) {
             game.wood += wood_prod_rate;
             game.plank += game.plankGrowth * game.plankUpgLevel;
@@ -203,8 +80,10 @@ function endOfTurnCalc() {
             game.nails += game.nailsGrowth * game.nailsUpgLevel
         }
 
-        
+        updateButtons();
+        Milestones();
         updateUI();
+        
     } if (game.castle == 10 && game.wall == 25 && game.house == 50) {
         winGame();
     }
@@ -394,6 +273,7 @@ function UpgradeItem(string) {
     if (game.money >= UpgradeCost(string)) {
         game.money = game.money - UpgradeCost(string);
         game[string + "UpgLevel"] += 1;
+        game.population += 1;
         updateUI();
     }
 }
@@ -406,6 +286,7 @@ function BuildItem(string) {
     if (game.money >= baseprice[string]) {
         game.money -= baseprice[string];
         game[string + "UpgLevel"] = 1;
+        game.population += 1;
         updateUI();
     }
 

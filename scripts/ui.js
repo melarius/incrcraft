@@ -1,5 +1,6 @@
 const ui = {
     money: document.getElementById("spnMoneyValue"),
+    population: document.getElementById("spnPopulationValue"),
     chop: document.getElementById("btnChopTrees"),
     sellall: document.getElementById("btnSellAll"),
     wood: {
@@ -180,8 +181,7 @@ const ui = {
 
 function updateUI() {
     ui.money.textContent = game.money.toLocaleString();
-    updateButtons()
-    Milestones()
+    ui.population.textContent = game.population;
 
     ui.wood.value.textContent = game.wood.toLocaleString();
     if (game.woodUpgLevel === 0) {
@@ -311,4 +311,6 @@ function updateUI() {
     ui.smelter.value.textContent = game.smelter
     ui.blacksmith.value.textContent = game.blacksmith
     ui.castle.value.textContent = game.castle
+
+    updateUI_upgrade()
 }

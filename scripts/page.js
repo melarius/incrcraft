@@ -12,20 +12,6 @@ function openTab(evt, tabName) {
     evt.currentTarget.className += " active";
   }
 
-function gameLoad(){
-    tab = document.getElementById("suburb");
-    btn = document.getElementById("m_btn1");
-    tab.style.display = "block";
-    btn.className += " active";
-    Swal.fire({
-      title: "Добро пожаловать!",
-      html: `Наконец-то мы прибыли. Это место подойдёт для строительства нового города.\n 
-      Необходимо начать заготавливать бревна и строить дома.\n 
-      Страрый торговец сказал, что у него есть возможность продать наши излишки на рынке Королевства.`.replace(/\n/g, '<br>'),
-      icon: "success"
-  });
-}
-
 function showTooltip(element, text) {
   var tooltip = document.createElement('div');
   tooltip.innerHTML = text;
