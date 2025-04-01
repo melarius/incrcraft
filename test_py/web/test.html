@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Hello, World!</title>
+  
+  <!-- Include eel.js - note this file doesn't exist in the 'web' directory -->
+  <script type="text/javascript" src="eel.js"></script>
+  <script type="text/javascript">
+
+   async function test_py() {
+
+      let game = {
+        money: 0,
+        population: 0,
+        taxes: 0,
+        taxesUpgLevel: 0,
+        taxesmodUpgLevel: 0,
+        taxesGrowth: 0,
+        wood: 0,
+        woodGrowth: 1,
+        woodUpgLevel: 0,
+        plank: 0,
+        plankGrowth: 1,
+        plankUpgLevel: 0,
+        stone: 0,
+        stoneGrowth: 1,
+        stoneUpgLevel: 0,
+        blocks: 0,
+        blocksGrowth: 1,
+        blocksUpgLevel: 0,
+        copperore: 0,
+        copperoreGrowth: 1,
+        copperoreUpgLevel: 0,
+        tinore: 0,
+        tinoreGrowth: 1,
+        tinoreUpgLevel: 0,
+        ironore: 0,
+        ironoreGrowth: 1,
+        ironoreUpgLevel: 0,
+        copperingot: 0,
+        copperingotGrowth: 1,
+        copperingotUpgLevel: 0,
+        tiningot: 0,
+        tiningotGrowth: 1,
+        tiningotUpgLevel: 0,
+        ironingot: 0,
+        ironingotGrowth: 1,
+        ironingotUpgLevel: 0,
+        bronzeingot: 0,
+        bronzeingotGrowth: 1,
+        bronzeingotUpgLevel: 0,
+        tools: 0,
+        toolsGrowth: 1,
+        toolsUpgLevel: 0,
+        nails: 0,
+        nailsGrowth: 1,
+        nailsUpgLevel: 0,
+        house: 0,
+        sawmill: 0,
+        quarry: 0,
+        stonemason: 0,
+        coppermine: 0,
+        tinmine: 0,
+        ironmine: 0,
+        smelter: 0,
+        blacksmith: 0,
+        wall: 0,
+        castle: 0,
+
+      }
+
+      let value = await eel.test(game)()//.then((r) => {spn.textContent = r;});
+
+
+    }
+  
+  </script>
+ 
+</head>
+
+<body>
+  <span id="id1">0</span>
+  <button id="btn1" onclick="test_py()">Init</button>
+
+
+
+  <script>
+    
+  </script>
+</body>
+</html>
